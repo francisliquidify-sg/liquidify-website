@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Liquidify | Business Financing for Singapore SMEs</title>
+<meta name="description" content="Liquidify helps Singapore SME owners find the right business financing. We assess which financing route your business qualifies for and manage the application through to disbursement.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://liquidify.sg/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Liquidify | Business Financing for Singapore SMEs">
+<meta property="og:description" content="There's more than one route to business financing. Understand which one your business actually qualifies for. Bank panel access, fees agreed upfront.">
+<meta property="og:url" content="https://liquidify.sg/">
+<meta property="og:locale" content="en_SG">
+<meta property="og:image" content="https://liquidify.sg/android-chrome-512x512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta name="twitter:card" content="summary">
+
+<!-- favicons / app icons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#00A47F">
+<meta name="facebook-domain-verification" content="ce2mb8m4cv036owzkm6u5ehi14hscy" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+
+<!-- Structured data: Liquidify as a business financing service (not a lender) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Liquidify",
+  "description": "Helping Singapore SME owners find the right business financing through banks and financial institutions.",
+  "url": "https://liquidify.sg/",
+  "areaServed": { "@type": "Country", "name": "Singapore" },
+  "serviceType": "Business financing services",
+  "email": "admin@liquidify.sg"
+}
+</script>
+
+<style>
+/* ============================================================
+   KEELPOINT — design tokens
+   Palette drawn from harbour/chart vernacular, not stock fintech.
+   ============================================================ */
+:root{
+  --ink:#0A2A24;        /* deep teal-black, headings + body */
+  --hull:#0F4438;       /* mid teal-green */
+  --steel:#566E67;      /* muted green-grey, secondary text */
+  --brass:#007558;      /* UI green — small text, links, buttons (AA on cream) */
+  --brand:#00A47F;      /* Liquidify brand green — logo + large elements only */
+  --brass-lt:#9EE3CD;   /* light brand tint, for dark backgrounds */
+  --sea:#0D7A63;        /* deeper signal green */
+  --mist:#EDF3F0;       /* soft green-tinted paper */
+  --paper:#FAF9F5;      /* cream, matches the logo ground */
+  --rule:#D7DFDB;
+  --white:#FFFFFF;
+
+  --display:"Newsreader",Georgia,serif;
+  --body:"Inter",system-ui,-apple-system,sans-serif;
+  --data:"IBM Plex Mono",ui-monospace,monospace;
+
+  --wrap:1160px;
+  --pad:clamp(20px,5vw,40px);
+  --r:14px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16.5px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-height:1.14;margin:0}
+h1{font-size:clamp(2.35rem,5.6vw,4.05rem)}
+h2{font-size:clamp(1.85rem,3.9vw,2.85rem)}
+h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+p{margin:0 0 1rem}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+/* eyebrow: mono labels, like chart annotations */
+.eyebrow{
+  font-family:var(--data);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass);margin:0 0 .9rem;display:flex;align-items:center;gap:.7rem;
+}
+.eyebrow::after{content:"";height:1px;flex:1;background:var(--rule);max-width:120px}
+
+section{padding:clamp(64px,9vw,110px) 0;position:relative}
+.section-dark{background:var(--ink);color:#E3EFEA}
+.section-dark h2,.section-dark h3{color:var(--white)}
+.section-dark .eyebrow{color:var(--brass-lt)}
+.section-dark .eyebrow::after{background:rgba(255,255,255,.18)}
+.section-mist{background:var(--mist)}
+.lede{font-size:clamp(1.02rem,1.6vw,1.16rem);color:var(--steel);max-width:60ch}
+.section-dark .lede{color:#9DB5AD}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--body);font-weight:600;font-size:.94rem;
+  padding:.92rem 1.5rem;border-radius:9px;border:1px solid transparent;
+  text-decoration:none;cursor:pointer;transition:background .18s,color .18s,border-color .18s,transform .18s;
+  min-height:48px;
+}
+.btn-primary{background:var(--brass);color:#fff}
+.btn-primary:focus-visible{outline-color:var(--ink)}
+.btn-primary:hover{background:#00876A}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn-ghost:hover{border-color:var(--ink)}
+.section-dark .btn-ghost{color:#fff;border-color:rgba(255,255,255,.28)}
+.section-dark .btn-ghost:hover{border-color:#fff}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:2.5px solid var(--sea);outline-offset:3px;border-radius:4px;
+}
+
+/* ---------- nav ---------- */
+header.nav{
+  position:sticky;top:0;z-index:60;background:rgba(250,249,245,.93);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:1.5rem}
+.brand{display:inline-flex;align-items:center;text-decoration:none;font-family:"Quicksand",var(--body);font-weight:600;font-size:1.5rem;letter-spacing:-.005em;color:var(--brand)}
+.mark{width:26px;height:26px;flex:none}
+.nav-links{display:none;gap:1.8rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:.9rem;color:var(--steel);font-weight:500}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{display:none}
+@media(min-width:900px){.nav-links{display:flex}.nav-cta{display:inline-flex}}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(52px,7vw,84px);padding-bottom:0;overflow:hidden}
+.hero-grid{display:grid;gap:clamp(38px,5vw,60px);align-items:center}
+@media(min-width:940px){.hero-grid{grid-template-columns:1.04fr .96fr}}
+.hero h1 em{font-style:italic;color:var(--hull)}
+.hero .lede{margin:1.4rem 0 2rem;font-size:clamp(1.05rem,1.7vw,1.2rem)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero-note{font-family:var(--data);font-size:.76rem;color:var(--steel);margin-top:1.3rem}
+
+/* signature: the two-route chart */
+.routes{
+  background:var(--white);border:1px solid var(--rule);border-radius:var(--r);
+  padding:clamp(22px,3.4vw,32px);box-shadow:0 18px 44px -30px rgba(10,42,36,.34);
+}
+.routes-title{font-family:var(--data);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--steel);margin-bottom:1.3rem}
+.route{padding:1.05rem 0;border-top:1px solid var(--rule)}
+.route:first-of-type{border-top:none;padding-top:0}
+.route-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.35rem}
+.route-no{font-family:var(--data);font-size:.72rem;color:var(--brass);font-weight:500}
+.route-name{font-family:var(--display);font-size:1.12rem}
+.route-desc{font-size:.9rem;color:var(--steel);margin:0}
+.route-bar{height:5px;border-radius:3px;margin-top:.75rem;background:var(--mist);overflow:hidden}
+.route-bar span{display:block;height:100%;border-radius:3px}
+.route-a .route-bar span{width:38%;background:var(--steel)}
+.route-b .route-bar span{width:88%;background:var(--sea)}
+.routes-foot{
+  margin-top:1.25rem;padding-top:1.1rem;border-top:1px dashed var(--rule);
+  font-size:.86rem;color:var(--steel);
+}
+
+/* trust strip */
+.strip{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--white);margin-top:clamp(52px,7vw,86px)}
+.strip-in{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+@media(min-width:820px){.strip-in{grid-template-columns:repeat(4,1fr)}}
+.strip-item{padding:1.5rem var(--pad);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+@media(min-width:820px){.strip-item{border-bottom:none}.strip-item:last-child{border-right:none}}
+.strip-item:nth-child(2n){border-right:none}
+@media(min-width:820px){.strip-item:nth-child(2n){border-right:1px solid var(--rule)}}
+.strip-k{font-family:var(--data);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:.35rem}
+.strip-v{font-size:.92rem;color:var(--ink);font-weight:500;line-height:1.4}
+
+/* ---------- generic grid + cards ---------- */
+.grid{display:grid;gap:1.15rem}
+.g2{grid-template-columns:1fr}
+.g3{grid-template-columns:1fr}
+@media(min-width:700px){.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.g3{grid-template-columns:repeat(3,1fr)}}
+.card{
+  background:var(--white);border:1px solid var(--rule);border-radius:var(--r);
+  padding:clamp(20px,2.6vw,26px);transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.card:hover{border-color:#B2C4BD;transform:translateY(-2px);box-shadow:0 14px 34px -26px rgba(10,42,36,.32)}
+.card h3{margin-bottom:.55rem}
+.card p{font-size:.93rem;color:var(--steel);margin-bottom:.9rem}
+.card ul{margin:0 0 1rem;padding-left:1.05rem;font-size:.88rem;color:var(--steel)}
+.card li{margin-bottom:.28rem}
+.card-link{font-family:var(--data);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);text-decoration:none;font-weight:500}
+.card-link:hover{text-decoration:underline}
+.icon{width:34px;height:34px;margin-bottom:1rem;color:var(--hull)}
+
+/* ---------- process ---------- */
+.steps{counter-reset:s;display:grid;gap:0;margin-top:2.4rem}
+.step{
+  display:grid;grid-template-columns:auto 1fr;gap:1.3rem;
+  padding:1.6rem 0;border-top:1px solid rgba(255,255,255,.14);
+}
+.step:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.step-n{font-family:var(--data);font-size:.78rem;color:var(--brass-lt);padding-top:.35rem}
+.step h3{margin-bottom:.35rem}
+.step p{color:#9DB5AD;font-size:.93rem;margin:0}
+
+/* ---------- calculators ---------- */
+.calc-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
+.tab{
+  font-family:var(--body);font-size:.86rem;font-weight:500;padding:.62rem 1.05rem;
+  border:1px solid var(--rule);background:var(--white);border-radius:8px;cursor:pointer;color:var(--steel);
+  min-height:44px;
+}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.calc{
+  background:var(--white);border:1px solid var(--rule);border-radius:var(--r);
+  padding:clamp(20px,3vw,30px);
+}
+.calc-grid{display:grid;gap:clamp(24px,3.4vw,40px)}
+@media(min-width:840px){.calc-grid{grid-template-columns:1.05fr .95fr}}
+.field{margin-bottom:1.35rem}
+.field label{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.86rem;font-weight:500;margin-bottom:.5rem}
+.field output{font-family:var(--data);font-size:.9rem;color:var(--hull)}
+input[type=range]{
+  width:100%;height:26px;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer;
+}
+input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--mist);border-radius:2px}
+input[type=range]::-moz-range-track{height:4px;background:var(--mist);border-radius:2px}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--brass);
+  border:3px solid #fff;box-shadow:0 1px 5px rgba(10,42,36,.26);margin-top:-8px;
+}
+input[type=range]::-moz-range-thumb{
+  width:20px;height:20px;border-radius:50%;background:var(--brass);border:3px solid #fff;
+  box-shadow:0 1px 5px rgba(10,42,36,.26);
+}
+.readout{background:var(--ink);border-radius:var(--r);padding:clamp(20px,3vw,28px);color:#fff;align-self:start}
+.readout-main{border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:1.1rem;margin-bottom:1.1rem}
+.readout-k{font-family:var(--data);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lt);margin-bottom:.4rem}
+.readout-v{font-family:var(--data);font-size:clamp(1.8rem,4vw,2.35rem);font-weight:500;letter-spacing:-.02em;line-height:1.1}
+.readout-row{display:flex;justify-content:space-between;gap:1rem;font-size:.88rem;padding:.42rem 0;color:#9DB5AD}
+.readout-row b{font-family:var(--data);font-weight:500;color:#fff}
+.disclaimer{font-size:.78rem;color:var(--steel);margin-top:1.3rem;line-height:1.55}
+
+/* ---------- placeholder blocks (owner fills with real data) ---------- */
+.placeholder{
+  border:1px dashed var(--brass);background:#F3FBF8;border-radius:var(--r);
+  padding:clamp(20px,3vw,26px);
+}
+.placeholder .tag{
+  font-family:var(--data);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:.7rem;
+}
+.placeholder p{font-size:.9rem;color:var(--steel);margin-bottom:.5rem}
+.placeholder p:last-child{margin-bottom:0}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:800px}
+details{border-bottom:1px solid var(--rule);padding:.35rem 0}
+summary{
+  cursor:pointer;list-style:none;padding:1.05rem 0;font-weight:500;font-size:1rem;
+  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;min-height:48px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--data);font-size:1.25rem;color:var(--brass);flex:none;transition:transform .2s}
+details[open] summary::after{content:"–"}
+details p{font-size:.93rem;color:var(--steel);padding-bottom:1.1rem;margin:0;max-width:70ch}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;gap:clamp(28px,4vw,52px)}
+@media(min-width:880px){.contact-grid{grid-template-columns:1fr 1fr}}
+.wa{
+  background:var(--white);border:1px solid var(--rule);border-radius:var(--r);
+  padding:clamp(22px,3vw,30px);
+}
+.wa-pre{
+  font-family:var(--data);font-size:.8rem;background:var(--mist);border-radius:9px;
+  padding:1rem 1.1rem;margin:1.1rem 0 1.3rem;color:var(--hull);line-height:1.8;white-space:pre-line;
+}
+.detail-row{display:flex;gap:.8rem;padding:.85rem 0;border-bottom:1px solid var(--rule);font-size:.92rem}
+.detail-row:last-child{border-bottom:none}
+.detail-k{font-family:var(--data);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);min-width:88px;padding-top:.18rem;flex:none}
+.detail-v a{color:var(--hull);text-decoration:none;border-bottom:1px solid var(--rule)}
+.detail-v a:hover{border-color:var(--hull)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#8FA79F;padding:clamp(52px,7vw,76px) 0 2.4rem;font-size:.86rem}
+footer h4{font-family:var(--data);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lt);margin-bottom:.9rem;font-weight:500}
+.foot-grid{display:grid;gap:2.2rem;margin-bottom:2.6rem}
+@media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+footer a{color:#AECBC1;text-decoration:none}
+footer a:hover{color:#fff}
+.foot-legal{border-top:1px solid rgba(255,255,255,.13);padding-top:1.8rem;font-size:.76rem;line-height:1.7;color:#7C948C}
+.foot-legal p{margin-bottom:.8rem;max-width:88ch}
+.foot-links{list-style:none;margin:0;padding:0}
+.foot-links li{margin-bottom:.5rem}
+
+/* sticky mobile CTA */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:.6rem;
+  padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));
+  background:rgba(250,249,245,.96);backdrop-filter:blur(10px);border-top:1px solid var(--rule);
+}
+.sticky-cta .btn{flex:1}
+@media(min-width:900px){.sticky-cta{display:none}}
+@media(max-width:899px){body{padding-bottom:78px}}
+
+
+/* ============================================================
+   NAV RIGHT + HAMBURGER
+   ============================================================ */
+.nav-right{display:flex;align-items:center;gap:.6rem}
+.menu-btn{
+  display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+  width:46px;height:46px;padding:0 11px;border:1px solid var(--rule);border-radius:9px;
+  background:var(--white);cursor:pointer;flex:none;
+}
+.menu-btn span{display:block;height:2px;background:var(--ink);border-radius:2px;transition:transform .22s,opacity .22s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:900px){.menu-btn{display:none}}
+
+/* ============================================================
+   SLIDE-OUT DRAWER
+   ============================================================ */
+.drawer{position:fixed;inset:0;z-index:200}
+.drawer[hidden]{display:none}
+.drawer-scrim{position:absolute;inset:0;background:rgba(10,42,36,.5);opacity:0;transition:opacity .25s}
+.drawer.open .drawer-scrim{opacity:1}
+.drawer-panel{
+  position:absolute;top:0;right:0;bottom:0;width:min(330px,86vw);
+  background:var(--paper);border-left:1px solid var(--rule);
+  display:flex;flex-direction:column;
+  transform:translateX(100%);transition:transform .28s cubic-bezier(.32,.72,0,1);
+  padding:0 0 calc(1rem + env(safe-area-inset-bottom));overflow-y:auto;
+}
+.drawer.open .drawer-panel{transform:none}
+.drawer-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 1.2rem;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;background:var(--paper);z-index:2;
+}
+.drawer-brand{font-family:"Quicksand",var(--body);font-weight:600;font-size:1.3rem;color:var(--brand)}
+.icon-btn{
+  width:44px;height:44px;border:1px solid var(--rule);border-radius:9px;background:var(--white);
+  font-size:1.35rem;line-height:1;color:var(--ink);cursor:pointer;flex:none;
+}
+.icon-btn:hover{border-color:var(--ink)}
+.drawer-panel nav{display:flex;flex-direction:column;padding:.5rem 0}
+.drawer-panel nav a{
+  padding:.95rem 1.2rem;text-decoration:none;color:var(--ink);font-size:1rem;font-weight:500;
+  border-bottom:1px solid var(--rule);min-height:52px;display:flex;align-items:center;
+}
+.drawer-panel nav a:active{background:var(--mist)}
+.drawer-foot{padding:1.3rem 1.2rem 0}
+.drawer-note{font-family:var(--data);font-size:.72rem;color:var(--steel);text-align:center;margin:.8rem 0 0}
+
+/* ============================================================
+   ENQUIRY SHEET
+   ============================================================ */
+.sheet{position:fixed;inset:0;z-index:210}
+.sheet[hidden]{display:none}
+.sheet-scrim{position:absolute;inset:0;background:rgba(10,42,36,.55);opacity:0;transition:opacity .25s}
+.sheet.open .sheet-scrim{opacity:1}
+.sheet-panel{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-46%) scale(.98);
+  width:min(560px,92vw);max-height:88vh;overflow-y:auto;
+  background:var(--paper);border:1px solid var(--rule);border-radius:16px;
+  box-shadow:0 30px 70px -30px rgba(10,42,36,.5);
+  opacity:0;transition:opacity .25s,transform .25s;
+}
+.sheet.open .sheet-panel{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.sheet-head{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.1rem 1.4rem;border-bottom:1px solid var(--rule);
+  position:sticky;top:0;background:var(--paper);border-radius:16px 16px 0 0;z-index:2;
+}
+.sheet-body{padding:1.5rem 1.4rem 1.7rem}
+.sheet-body .wa-pre{margin:1.1rem 0 1.2rem}
+/* full-screen on phones */
+@media(max-width:640px){
+  .sheet-panel{
+    left:0;top:auto;bottom:0;transform:translateY(100%);width:100%;max-height:92vh;
+    border-radius:18px 18px 0 0;border-left:none;border-right:none;border-bottom:none;
+  }
+  .sheet.open .sheet-panel{transform:none}
+  .sheet-head{border-radius:18px 18px 0 0}
+  .sheet-body{padding-bottom:calc(1.7rem + env(safe-area-inset-bottom))}
+}
+
+/* ============================================================
+   FAQ FEEDBACK
+   ============================================================ */
+.faq-fb{
+  display:flex;align-items:center;flex-wrap:wrap;gap:.55rem;
+  padding:0 0 1.15rem;margin-top:-.35rem;
+}
+.faq-fb span{font-family:var(--data);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin-right:.2rem}
+.fb-btn{
+  font-family:var(--body);font-size:.82rem;font-weight:500;padding:.5rem .95rem;min-height:44px;
+  border:1px solid var(--rule);background:var(--white);border-radius:20px;color:var(--steel);cursor:pointer;
+  transition:border-color .18s,color .18s,background .18s;
+}
+.fb-btn:hover{border-color:var(--brass);color:var(--brass)}
+.fb-btn.picked{background:var(--brass);border-color:var(--brass);color:#fff}
+.faq-fb.done .fb-btn{display:none}
+.faq-fb .thanks{
+  font-size:.84rem;color:var(--brass);font-weight:500;font-family:var(--body);
+  letter-spacing:0;text-transform:none;margin:0;
+}
+
+/* ============================================================
+   FOOTER LEGAL TOGGLE
+   ============================================================ */
+.legal-toggle{border-bottom:none;padding:0}
+.legal-toggle summary{
+  padding:.9rem 0;font-size:.88rem;color:#AECBC1;font-weight:500;min-height:46px;
+}
+.legal-toggle summary::after{color:#9EE3CD}
+.legal-body{padding-top:.4rem}
+.copyline{margin:1.1rem 0 0;font-size:.76rem;color:#7C948C}
+
+/* ============================================================
+   SMALL-SCREEN POLISH
+   ============================================================ */
+@media(max-width:640px){
+  h1{font-size:clamp(2rem,8.4vw,2.6rem);line-height:1.1}
+  .hero{padding-top:34px}
+  .hero .lede{margin:1.1rem 0 1.5rem;font-size:1rem}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%}
+  .hero-note{text-align:center;margin-top:1rem}
+  .hero-grid{gap:30px}
+  section{padding:52px 0}
+  .strip-item{padding:1.15rem var(--pad)}
+  .calc-tabs{gap:.4rem}
+  .tab{flex:1 1 auto;text-align:center;padding:.6rem .5rem;font-size:.8rem}
+  .readout-v{font-size:1.9rem}
+  .foot-grid{gap:1.8rem}
+  .detail-k{min-width:76px}
+  summary{font-size:.95rem}
+}
+@media(max-width:380px){
+  :root{--pad:16px}
+  body{font-size:15.5px}
+  h1{font-size:2rem}
+  .brand{font-size:1.3rem}
+  .btn{font-size:.9rem;padding:.85rem 1.1rem}
+  .wa-pre{font-size:.74rem}
+  .strip-in{grid-template-columns:1fr}
+  .strip-item{border-right:none}
+}
+/* stop background scroll when an overlay is open */
+body.locked{overflow:hidden}
+
+
+/* ============================================================
+   INSTITUTION MARQUEE
+   ============================================================ */
+.mq-sec{padding:clamp(38px,5vw,58px) 0;background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.mq{
+  overflow:hidden;margin:1.4rem 0 1.3rem;position:relative;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+}
+.mq-track{
+  display:flex;align-items:center;width:max-content;
+  animation:mq-scroll 42s linear infinite;
+}
+.mq:hover .mq-track,.mq:focus-within .mq-track{animation-play-state:paused}
+@keyframes mq-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-item{
+  flex:none;padding:0 clamp(22px,3.4vw,44px);
+  font-family:var(--display);font-size:clamp(1.05rem,2.1vw,1.4rem);
+  color:var(--hull);white-space:nowrap;letter-spacing:-.01em;opacity:.72;
+}
+/* swap a name for a logo by replacing the span with: <img class="mq-logo" src="/logos/x.svg" alt="X"> */
+.mq-logo{
+  flex:none;height:clamp(22px,3.2vw,30px);width:auto;
+  margin:0 clamp(22px,3.4vw,44px);
+  filter:grayscale(1);opacity:.62;
+}
+.mq-note{
+  font-size:.78rem;line-height:1.6;color:var(--steel);max-width:80ch;margin:0;
+}
+@media (prefers-reduced-motion:reduce){
+  .mq{-webkit-mask-image:none;mask-image:none;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .mq-track{animation:none}
+}
+@media(max-width:640px){
+  .mq-track{animation-duration:26s}
+}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Liquidify home">liquidify</a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#routes">Two routes</a></li>
+        <li><a href="#solutions">Financing</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#calculators">Calculators</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <button class="btn btn-primary nav-cta" data-enquiry type="button">Check your options</button>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- slide-out navigation -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site navigation" hidden>
+  <div class="drawer-scrim" data-close-drawer></div>
+  <aside class="drawer-panel">
+    <div class="drawer-head">
+      <span class="drawer-brand">liquidify</span>
+      <button class="icon-btn" data-close-drawer type="button" aria-label="Close menu">&#215;</button>
+    </div>
+    <nav aria-label="Sections">
+      <a href="#top" data-nav>Home</a>
+      <a href="#routes" data-nav>Two routes</a>
+      <a href="#solutions" data-nav>Financing solutions</a>
+      <a href="#process" data-nav>Our process</a>
+      <a href="#calculators" data-nav>Calculators</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#contact" data-nav>Contact</a>
+      <a href="#faq" data-nav>FAQ</a>
+      <a href="#legal" data-nav>Legal &amp; policies</a>
+    </nav>
+    <div class="drawer-foot">
+      <button class="btn btn-primary" style="width:100%" data-enquiry type="button">Check which route fits you</button>
+      <p class="drawer-note">No cost to ask &middot; No obligation</p>
+    </div>
+  </aside>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Singapore SME business financing</p>
+      <h1>There's more than <em>one</em> route to business financing.</h1>
+      <p class="lede">Most business owners are assessed on company revenue alone — and stop asking when the answer is no. A second route exists, assessed on entirely different criteria. Knowing which one fits your business is the difference between a decline and a disbursement.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-enquiry type="button">Check which route fits you</button>
+        <a class="btn btn-ghost" href="#routes">See how assessment works</a>
+      </div>
+      <p class="hero-note">No cost to ask · No obligation · Fee agreed upfront, only on success</p>
+    </div>
+
+    <!-- SIGNATURE ELEMENT: the two-route chart -->
+    <div class="routes reveal" id="routes-chart">
+      <p class="routes-title">How your application gets assessed</p>
+
+      <div class="route route-a">
+        <div class="route-head">
+          <span class="route-no">Route A</span>
+          <span class="route-name">Assessed on company turnover</span>
+        </div>
+        <p class="route-desc">The traditional working capital loan. Banks look first at annual revenue, trading history and company creditworthiness. Businesses that fall short on those measures are declined on this route alone.</p>
+        <div class="route-bar" aria-hidden="true"><span></span></div>
+      </div>
+
+      <div class="route route-b">
+        <div class="route-head">
+          <span class="route-no">Route B</span>
+          <span class="route-name">Assessed on director's profile</span>
+        </div>
+        <p class="route-desc">An unsecured business facility weighted on the director's personal credit standing and income tax Notices of Assessment, rather than company turnover.</p>
+        <div class="route-bar" aria-hidden="true"><span></span></div>
+      </div>
+
+      <p class="routes-foot">Two structures, two sets of eligibility criteria. A business that doesn't clear the first can still be viable on the second — which is the conversation most owners never get to have.</p>
+    </div>
+  </div>
+
+  <!-- trust strip: factual, verifiable claims only -->
+  <div class="strip">
+    <div class="wrap" style="padding-left:0;padding-right:0;max-width:var(--wrap)">
+      <div class="strip-in">
+        <div class="strip-item"><p class="strip-k">Independent</p><p class="strip-v">We compare across a panel of banks and financial institutions, not one lender's book.</p></div>
+        <div class="strip-item"><p class="strip-k">Transparent</p><p class="strip-v">Our service fee is agreed in writing before you commit to anything.</p></div>
+        <div class="strip-item"><p class="strip-k">Handled end to end</p><p class="strip-v">Structuring, documentation and submission through the banker, managed for you.</p></div>
+        <div class="strip-item"><p class="strip-k">Direct access</p><p class="strip-v">You deal with one consultant throughout — not a call centre queue.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTITUTION MARQUEE ============ -->
+<section class="mq-sec">
+  <div class="wrap">
+    <p class="eyebrow reveal">Applications submitted through</p>
+  </div>
+
+  <div class="mq" role="img" aria-label="Banks and financial institutions Liquidify submits applications to: DBS, OCBC, UOB, Maybank, CIMB, Standard Chartered, RHB, HSBC, Hong Leong Finance, Sing Investments and Finance, IFS Capital, ORIX">
+    <div class="mq-track">
+        <span class="mq-item">DBS</span>
+        <span class="mq-item">OCBC</span>
+        <span class="mq-item">UOB</span>
+        <span class="mq-item">Maybank</span>
+        <span class="mq-item">CIMB</span>
+        <span class="mq-item">Standard Chartered</span>
+        <span class="mq-item">RHB</span>
+        <span class="mq-item">HSBC</span>
+        <span class="mq-item">Hong Leong Finance</span>
+        <span class="mq-item">Sing Investments &amp; Finance</span>
+        <span class="mq-item">IFS Capital</span>
+        <span class="mq-item">ORIX</span>
+        <span class="mq-item">DBS</span>
+        <span class="mq-item">OCBC</span>
+        <span class="mq-item">UOB</span>
+        <span class="mq-item">Maybank</span>
+        <span class="mq-item">CIMB</span>
+        <span class="mq-item">Standard Chartered</span>
+        <span class="mq-item">RHB</span>
+        <span class="mq-item">HSBC</span>
+        <span class="mq-item">Hong Leong Finance</span>
+        <span class="mq-item">Sing Investments &amp; Finance</span>
+        <span class="mq-item">IFS Capital</span>
+        <span class="mq-item">ORIX</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="mq-note reveal">Liquidify is not a bank or a lender, and is not affiliated with, endorsed by, or acting as an agent of these institutions. Applications are prepared and submitted for assessment; all lending decisions and terms rest with the institution. Panel availability varies by case.</p>
+  </div>
+</section>
+
+<!-- ============ THE TWO ROUTES, EXPANDED ============ -->
+<section id="routes" class="section-mist">
+  <div class="wrap">
+    <p class="eyebrow reveal">The part most owners miss</p>
+    <h2 class="reveal" style="max-width:20ch">Turnover is a criterion, not a verdict.</h2>
+    <p class="lede reveal" style="margin-top:1.2rem">Two facilities can fund the same business and be assessed on completely different things. Understanding which door you're knocking on changes the outcome — and, in one case, changes what the loan does to your borrowing capacity later.</p>
+
+    <div class="grid g2" style="margin-top:2.6rem">
+      <div class="card reveal">
+        <h3>Route A — the turnover test</h3>
+        <p>Traditional working capital and term loans start with the company's financials. Revenue, trading history and company creditworthiness carry the assessment.</p>
+        <ul>
+          <li>Best fit for established businesses with steady, documented revenue</li>
+          <li>Typically the lowest cost of funds when you qualify</li>
+          <li>Newer businesses, or those with thinner revenue, are frequently declined here</li>
+        </ul>
+        <p style="margin-bottom:0;font-size:.88rem"><strong>If this is a no,</strong> it is a no about <em>this product</em> — not about your business.</p>
+      </div>
+
+      <div class="card reveal">
+        <h3>Route B — the director's profile</h3>
+        <p>An unsecured business facility weighted on the director rather than the company. Personal credit standing and income tax Notices of Assessment do the heavy lifting.</p>
+        <ul>
+          <li>Opens a route for newer or smaller-turnover businesses</li>
+          <li>Structured as a business facility, so it doesn't sit on your consumer credit file</li>
+          <li>Doesn't consume the TDSR headroom you'll need for a property purchase</li>
+        </ul>
+        <p style="margin-bottom:0;font-size:.88rem"><strong>Why that last point matters:</strong> if a mortgage is anywhere in your plans, how a facility is structured affects what you can borrow later.</p>
+      </div>
+    </div>
+
+    <p class="disclaimer reveal" style="max-width:78ch">Eligibility, structure and treatment vary by lender and by your circumstances. Nothing here is an offer of credit or a statement that you will qualify — the purpose of a consultation is to work out which route, if any, actually fits your numbers.</p>
+  </div>
+</section>
+
+<!-- ============ SOLUTIONS ============ -->
+<section id="solutions">
+  <div class="wrap">
+    <p class="eyebrow reveal">What we arrange</p>
+    <h2 class="reveal" style="max-width:22ch">Financing matched to the need, not to a product sheet.</h2>
+
+    <div class="grid g3" style="margin-top:2.6rem">
+      <div class="card reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+        <h3>Business term loan</h3>
+        <p>A lump sum repaid over a fixed period. The workhorse facility for expansion, hiring, or consolidating costlier borrowing.</p>
+        <ul><li>Fixed, plannable repayments</li><li>Assessed on turnover or director profile</li></ul>
+        <a class="card-link" href="#contact">Check eligibility →</a>
+      </div>
+
+      <div class="card reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12h18M12 3v18M7 7l10 10M17 7L7 17"/></svg>
+        <h3>Working capital</h3>
+        <p>Funding for day-to-day operations — payroll, stock, supplier terms — where timing, not profitability, is the constraint.</p>
+        <ul><li>Sized to operating cycle</li><li>Includes government-supported schemes where eligible</li></ul>
+        <a class="card-link" href="#contact">Check eligibility →</a>
+      </div>
+
+      <div class="card reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 4h12l4 4v12H4zM16 4v4h4M8 13h8M8 17h5"/></svg>
+        <h3>Invoice financing</h3>
+        <p>Release cash tied up in receivables when customers pay on long terms but your obligations don't wait.</p>
+        <ul><li>Advances against confirmed invoices</li><li>Scales with your order book</li></ul>
+        <a class="card-link" href="#contact">Check eligibility →</a>
+      </div>
+
+      <div class="card reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>
+        <h3>Personal capital</h3>
+        <p>Where the business is newer or turnover is thin, financing assessed on the director's own profile can be the route that opens.</p>
+        <ul><li>Weighted on personal credit standing and Notices of Assessment</li><li>Useful when company financials alone fall short</li></ul>
+        <a class="card-link" href="#contact">Check eligibility →</a>
+      </div>
+
+      <div class="card reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 12h20M6 8l-4 4 4 4M18 8l4 4-4 4"/></svg>
+        <h3>Trade financing</h3>
+        <p>Bridge the gap between paying suppliers and being paid by buyers across an import or export cycle.</p>
+        <ul><li>Structured around the trade cycle</li><li>Supports overseas supplier terms</li></ul>
+        <a class="card-link" href="#contact">Check eligibility →</a>
+      </div>
+
+      <div class="card reveal">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10l9-6 9 6v10H3zM9 20v-6h6v6"/></svg>
+        <h3>Property-backed financing</h3>
+        <p>Larger facilities secured against property, where a business needs scale that unsecured lending won't reach.</p>
+        <ul><li>Higher quantum, longer tenure</li><li>Assessed on asset and profile together</li></ul>
+        <a class="card-link" href="#contact">Check eligibility →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process" class="section-dark">
+  <div class="wrap">
+    <p class="eyebrow reveal">How it works</p>
+    <h2 class="reveal" style="max-width:20ch">Four steps, and you'll know where you stand after the first.</h2>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-n">01</div>
+        <div>
+          <h3>Conversation</h3>
+          <p>A short conversation about your business, what the funding is for, and your timeline. No documents needed to start, and no cost to ask.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">02</div>
+        <div>
+          <h3>Assessment</h3>
+          <p>We look at your position the way a credit assessor will — turnover, director profile, existing commitments — and tell you honestly which routes are realistic and which aren't.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">03</div>
+        <div>
+          <h3>Structuring and submission</h3>
+          <p>We prepare the application so it presents properly, then submit through the relevant banker on the panel. You approve the fee in writing before this stage.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-n">04</div>
+        <div>
+          <h3>Outcome and disbursement</h3>
+          <p>We manage follow-ups and queries through to the lender's decision, and walk you through the terms before you accept anything.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.4rem">
+      <button class="btn btn-primary" data-enquiry type="button">Start with step one</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULATORS ============ -->
+<section id="calculators" class="section-mist">
+  <div class="wrap">
+    <p class="eyebrow reveal">Estimation tools</p>
+    <h2 class="reveal" style="max-width:24ch">Run the numbers before you talk to anyone.</h2>
+    <p class="lede reveal" style="margin-top:1.1rem">These give you an indicative picture using standard amortisation maths. They are planning tools, not lender quotes.</p>
+
+    <div class="calc-tabs reveal" role="tablist" aria-label="Calculators" style="margin-top:2rem">
+      <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Monthly repayment</button>
+      <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">Borrowing capacity</button>
+      <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">Refinancing savings</button>
+    </div>
+
+    <!-- CALC 1 -->
+    <div class="calc" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
+      <div class="calc-grid">
+        <div>
+          <div class="field">
+            <label for="c1-amt">Loan amount <output id="c1-amt-o">S$100,000</output></label>
+            <input type="range" id="c1-amt" min="10000" max="1000000" step="5000" value="100000">
+          </div>
+          <div class="field">
+            <label for="c1-rate">Interest rate (p.a.) <output id="c1-rate-o">6.0%</output></label>
+            <input type="range" id="c1-rate" min="1" max="20" step="0.1" value="6">
+          </div>
+          <div class="field">
+            <label for="c1-yrs">Tenure <output id="c1-yrs-o">5 years</output></label>
+            <input type="range" id="c1-yrs" min="1" max="5" step="1" value="5">
+          </div>
+        </div>
+        <div class="readout">
+          <div class="readout-main">
+            <p class="readout-k">Monthly repayment</p>
+            <p class="readout-v" id="c1-monthly">S$1,933</p>
+          </div>
+          <div class="readout-row"><span>Total repayment</span><b id="c1-total">S$115,997</b></div>
+          <div class="readout-row"><span>Total interest</span><b id="c1-int">S$15,997</b></div>
+          <div class="readout-row"><span>Interest as % of principal</span><b id="c1-pct">16.0%</b></div>
+        </div>
+      </div>
+      <p class="disclaimer">Calculated on a standard reducing-balance amortisation. Actual repayments depend on the lender's rate basis (some business facilities use a flat or factor rate), fees, and final approved terms.</p>
+    </div>
+
+    <!-- CALC 2 -->
+    <div class="calc" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+      <div class="calc-grid">
+        <div>
+          <div class="field">
+            <label for="c2-inc">Monthly income <output id="c2-inc-o">S$12,000</output></label>
+            <input type="range" id="c2-inc" min="2000" max="80000" step="500" value="12000">
+          </div>
+          <div class="field">
+            <label for="c2-com">Existing monthly commitments <output id="c2-com-o">S$2,000</output></label>
+            <input type="range" id="c2-com" min="0" max="40000" step="250" value="2000">
+          </div>
+          <div class="field">
+            <label for="c2-rate">Assumed interest rate (p.a.) <output id="c2-rate-o">6.0%</output></label>
+            <input type="range" id="c2-rate" min="1" max="20" step="0.1" value="6">
+          </div>
+          <div class="field">
+            <label for="c2-yrs">Tenure <output id="c2-yrs-o">5 years</output></label>
+            <input type="range" id="c2-yrs" min="1" max="30" step="1" value="5">
+          </div>
+        </div>
+        <div class="readout">
+          <div class="readout-main">
+            <p class="readout-k">Indicative borrowing capacity</p>
+            <p class="readout-v" id="c2-cap">S$237,938</p>
+          </div>
+          <div class="readout-row"><span>Assumed servicing ratio</span><b>55%</b></div>
+          <div class="readout-row"><span>Available monthly servicing</span><b id="c2-avail">S$4,600</b></div>
+          <div class="readout-row"><span>Assumed monthly rate</span><b id="c2-mrate">0.500%</b></div>
+        </div>
+      </div>
+      <p class="disclaimer">A rough guide only, using a 55% servicing assumption. Lenders apply their own ratios, stress rates and policy rules, and business facilities are assessed differently from personal borrowing. This is not an indication that any amount will be approved.</p>
+    </div>
+
+    <!-- CALC 3 -->
+    <div class="calc" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+      <div class="calc-grid">
+        <div>
+          <div class="field">
+            <label for="c3-bal">Outstanding balance <output id="c3-bal-o">S$300,000</output></label>
+            <input type="range" id="c3-bal" min="20000" max="2000000" step="10000" value="300000">
+          </div>
+          <div class="field">
+            <label for="c3-cur">Current rate (p.a.) <output id="c3-cur-o">7.0%</output></label>
+            <input type="range" id="c3-cur" min="1" max="20" step="0.1" value="7">
+          </div>
+          <div class="field">
+            <label for="c3-new">New rate (p.a.) <output id="c3-new-o">5.0%</output></label>
+            <input type="range" id="c3-new" min="1" max="20" step="0.1" value="5">
+          </div>
+          <div class="field">
+            <label for="c3-yrs">Remaining tenure <output id="c3-yrs-o">10 years</output></label>
+            <input type="range" id="c3-yrs" min="1" max="30" step="1" value="10">
+          </div>
+        </div>
+        <div class="readout">
+          <div class="readout-main">
+            <p class="readout-k">Estimated total saving</p>
+            <p class="readout-v" id="c3-life">S$36,155</p>
+          </div>
+          <div class="readout-row"><span>Current monthly</span><b id="c3-cm">S$3,483</b></div>
+          <div class="readout-row"><span>New monthly</span><b id="c3-nm">S$3,182</b></div>
+          <div class="readout-row"><span>Monthly saving</span><b id="c3-ms">S$301</b></div>
+        </div>
+      </div>
+      <p class="disclaimer">Excludes prepayment penalties, legal and valuation costs, and lock-in periods, which can materially change whether refinancing is worthwhile. Compare total cost, not just the rate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY / ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="grid g2" style="align-items:start;gap:clamp(32px,4.5vw,60px)">
+      <div class="reveal">
+        <p class="eyebrow">Why Liquidify</p>
+        <h2 style="max-width:18ch">A straight answer costs you nothing.</h2>
+        <p class="lede" style="margin-top:1.2rem">Plenty of businesses are told no once and stop asking. Others are pushed toward whichever facility earns the intermediary the most. Neither is advice.</p>
+        <p style="font-size:.95rem;color:var(--steel)">Liquidify works the other way round: understand the business first, be honest about what's realistic, and say so plainly when financing isn't the right answer right now. The fee is agreed in writing upfront and is payable on a successful outcome — so there is no incentive to push you toward something that won't complete.</p>
+
+        <div style="margin-top:1.8rem">
+          <div class="detail-row"><span class="detail-k">Independent</span><span class="detail-v">Panel access across banks and financial institutions</span></div>
+          <div class="detail-row"><span class="detail-k">Scope</span><span class="detail-v">Business financing — we are not a lender</span></div>
+          <div class="detail-row"><span class="detail-k">Fee</span><span class="detail-v">Agreed in writing before submission, payable on success</span></div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="card" style="background:var(--mist);border-color:var(--rule)">
+          <p class="eyebrow" style="margin-bottom:1rem">What you can expect</p>
+          <div class="detail-row"><span class="detail-k">First reply</span><span class="detail-v">Same day, in most cases</span></div>
+          <div class="detail-row"><span class="detail-k">First answer</span><span class="detail-v">Which routes are realistic for your numbers — before any paperwork</span></div>
+          <div class="detail-row"><span class="detail-k">If it&rsquo;s a no</span><span class="detail-v">You&rsquo;ll be told plainly, and what would need to change</span></div>
+          <div class="detail-row"><span class="detail-k">No cost</span><span class="detail-v">The initial conversation is free and carries no obligation</span></div>
+          <p style="font-size:.9rem;color:var(--steel);margin:1.3rem 0 0">
+            Every case is different. The fastest way to know where you stand is a short conversation about your business and what the funding is for.
+          </p>
+          <button class="btn btn-primary" style="width:100%;margin-top:1.1rem" data-enquiry type="button">Check which route fits you</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <p class="eyebrow reveal">Get in touch</p>
+    <h2 class="reveal" style="max-width:22ch">Send four lines. We'll tell you which route fits.</h2>
+
+    <div class="contact-grid" style="margin-top:2.4rem">
+      <div class="wa reveal">
+        <h3 style="margin-bottom:.6rem">Message us on WhatsApp</h3>
+        <p style="font-size:.93rem;color:var(--steel)">Fastest way to get a straight answer. Tap below and it pre-fills these details — fill them in and send.</p>
+        <div class="wa-pre">Name:
+Business name:
+Average monthly revenue:
+Amount needed:
+Purpose of funds:</div>
+        <a class="btn btn-primary" style="width:100%" href="https://wa.me/6581932026?text=Hi%20Liquidify%2C%20I%27d%20like%20to%20check%20my%20financing%20options.%0A%0AName%3A%0ABusiness%20name%3A%0AAverage%20monthly%20revenue%3A%0AAmount%20needed%3A%0APurpose%20of%20funds%3A">Open WhatsApp</a>
+        <p class="disclaimer" style="margin-top:1.1rem">Please don't send NRIC numbers, bank login details or full financial documents in a first message — we'll tell you what's needed and how to send it securely.</p>
+      </div>
+
+      <div class="reveal">
+        <h3 style="margin-bottom:1.1rem">Details</h3>
+        <!-- ===== OWNER: fill in real contact details before publishing ===== -->
+        <div class="detail-row"><span class="detail-k">Email</span><span class="detail-v"><a href="mailto:admin@liquidify.sg">admin@liquidify.sg</a></span></div>
+        <div class="detail-row"><span class="detail-k">WhatsApp</span><span class="detail-v"><a href="https://wa.me/6581932026">+65 8193 2026</a></span></div>
+        <div class="detail-row"><span class="detail-k">Hours</span><span class="detail-v">Monday to Friday, 9am – 6pm (SGT)</span></div>
+        <div class="detail-row"><span class="detail-k">Serving</span><span class="detail-v">Singapore-registered businesses</span></div>
+        <div class="detail-row"><span class="detail-k">Entity</span><span class="detail-v">Liquidify Pte Ltd · UEN 202636137M</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="section-mist">
+  <div class="wrap">
+    <p class="eyebrow reveal">Questions owners actually ask</p>
+    <h2 class="reveal" style="max-width:20ch">Answered plainly, before you get in touch.</h2>
+
+    <div class="faq reveal" style="margin-top:2.2rem">
+      <details>
+        <summary>My turnover is too low for a bank loan. Is it worth talking to you?</summary>
+        <p>Very likely — that's precisely the situation where the assessment route matters. The traditional working capital loan leans on company revenue, but an unsecured facility assessed on the director's profile and income tax Notices of Assessment is a different test entirely. Whether you clear it depends on your personal credit standing and declared income, which is what a first conversation establishes.</p>
+      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
+      </details>
+      <details>
+        <summary>What do you charge?</summary>
+        <p>A service fee calculated as a percentage of the amount financed, agreed with you in writing before we submit anything, and payable on a successful outcome. The percentage depends on the complexity of the case and the facility involved. There is no charge for the initial conversation.</p>
+      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
+      </details>
+      <details>
+        <summary>Are you a lender?</summary>
+        <p>No. Liquidify helps you find and apply for business financing. We assess your position, structure the application, and submit it through the relevant banker or financial institution. The lending decision, the rate and the terms are always the lender's.</p>
+      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
+      </details>
+      <details>
+        <summary>Will this affect my ability to buy property later?</summary>
+        <p>It depends on how the facility is structured. A properly structured business facility is treated differently from personal borrowing when it comes to your consumer credit file and your TDSR headroom. If a property purchase is anywhere in your plans, say so at the outset — it should shape which route we pursue, not be discovered afterwards.</p>
+      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
+      </details>
+      <details>
+        <summary>What documents will I need?</summary>
+        <p>Nothing to start the conversation. For an application, expect company registration details, recent bank statements, financial statements where available, and the director's income tax Notices of Assessment. We'll tell you exactly what's needed for your specific route before you gather anything.</p>
+      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <p>It varies by lender and facility, and anyone quoting you a fixed timeline before seeing your case is guessing. What we can commit to is telling you quickly whether your case is realistic, so you're not waiting weeks to hear a no.</p>
+      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
+      </details>
+      <details>
+        <summary>What if I've been declined before?</summary>
+        <p>A decline is specific to a lender, a product and a moment. It's worth understanding <em>why</em> — whether it was turnover, documentation, existing commitments or how the application was presented — because that determines whether a different route is viable or whether the honest answer is to strengthen your position first.</p>
+      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" style="color:#9EE3CD;margin-bottom:.9rem;display:inline-block">liquidify</a>
+        <p style="max-width:34ch">Helping Singapore SME owners find the right business financing — assessing which route you qualify for, and managing the application through to disbursement.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="foot-links">
+          <li><a href="#routes">How assessment works</a></li>
+          <li><a href="#solutions">Financing solutions</a></li>
+          <li><a href="#process">Our process</a></li>
+          <li><a href="#calculators">Calculators</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#legal">Legal &amp; policies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:admin@liquidify.sg">admin@liquidify.sg</a></li>
+          <li><a href="https://wa.me/6581932026">WhatsApp</a></li>
+          <li>Mon–Fri, 9am–6pm SGT</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-legal" id="legal">
+      <details class="legal-toggle">
+        <summary>Important legal information &amp; policies</summary>
+        <div class="legal-body">
+      <!-- ===== OWNER: have these reviewed before publishing, and add full policy pages ===== -->
+      <p><strong style="color:#AECBC1">What we are.</strong> Liquidify helps Singapore businesses find and apply for financing. We are not a bank, a lender, or a licensed moneylender, and we do not provide regulated financial advice. We assess your position, prepare and submit applications, and liaise with banks and financial institutions on your behalf. All lending decisions, rates and terms are determined solely by the lender.</p>
+      <p><strong style="color:#AECBC1">No offer of credit.</strong> Nothing on this site constitutes an offer of credit, a pre-approval, or an assurance that any application will succeed. Eligibility and terms depend on the lender's assessment of your circumstances.</p>
+      <p><strong style="color:#AECBC1">Estimates only.</strong> The calculators provide indicative figures using standard assumptions. They do not reflect any lender's actual pricing, fees or policy, and should not be relied on for financial decisions.</p>
+      <p><strong style="color:#AECBC1">Borrow responsibly.</strong> Business borrowing carries risk. Repayments must be met regardless of trading conditions, and directors may be personally liable under a personal guarantee. Consider whether the facility suits your cash flow before committing, and seek independent professional advice where appropriate.</p>
+      <p><strong style="color:#AECBC1">Your data.</strong> Information you provide is collected and used in accordance with Singapore's Personal Data Protection Act (PDPA), solely to assess and progress your enquiry. We do not sell your data. Add links here to your full Privacy Policy, Terms of Use and Cookie Policy before publishing.</p>
+        </div>
+      </details>
+      <p class="copyline">© <span id="yr">2026</span> Liquidify Pte Ltd &middot; UEN 202636137M. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- focused enquiry panel — opens in place instead of jumping to the page bottom -->
+<div class="sheet" id="enquiry" role="dialog" aria-modal="true" aria-labelledby="enqTitle" hidden>
+  <div class="sheet-scrim" data-close-enquiry></div>
+  <div class="sheet-panel">
+    <div class="sheet-head">
+      <p class="eyebrow" style="margin:0">Check your options</p>
+      <button class="icon-btn" data-close-enquiry type="button" aria-label="Close">&#215;</button>
+    </div>
+    <div class="sheet-body">
+      <h2 id="enqTitle" style="font-size:clamp(1.5rem,4.4vw,2rem);margin-bottom:.7rem">Send four lines. We'll tell you which route fits.</h2>
+      <p style="font-size:.95rem;color:var(--steel)">Fastest way to get a straight answer. Tap below and it pre-fills these details &mdash; fill them in and send.</p>
+      <div class="wa-pre">Name:
+Business name:
+Average monthly revenue:
+Amount needed:
+Purpose of funds:</div>
+      <a class="btn btn-primary" style="width:100%" href="https://wa.me/6581932026?text=Hi%20Liquidify%2C%20I%27d%20like%20to%20check%20my%20financing%20options.%0A%0AName%3A%0ABusiness%20name%3A%0AAverage%20monthly%20revenue%3A%0AAmount%20needed%3A%0APurpose%20of%20funds%3A">Open WhatsApp</a>
+      <p class="disclaimer">Please don't send NRIC numbers, bank login details or full financial documents in a first message &mdash; we'll tell you what's needed and how to send it securely.</p>
+      <div style="margin-top:1.4rem;border-top:1px solid var(--rule);padding-top:1.2rem">
+        <div class="detail-row"><span class="detail-k">Email</span><span class="detail-v"><a href="mailto:admin@liquidify.sg">admin@liquidify.sg</a></span></div>
+        <div class="detail-row"><span class="detail-k">WhatsApp</span><span class="detail-v"><a href="https://wa.me/6581932026">+65 8193 2026</a></span></div>
+        <div class="detail-row"><span class="detail-k">Hours</span><span class="detail-v">Mon&ndash;Fri, 9am&ndash;6pm (SGT)</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sticky-cta">
+  <a class="btn btn-ghost" href="#calculators">Calculators</a>
+  <button class="btn btn-primary" data-enquiry type="button">Check your options</button>
+</div>
+
+<!-- SECURE DOCUMENT UPLOAD FORM -->
+<section id="upload-form" style="max-width:600px; margin:60px auto; padding:40px; background:#f5f5f5; border-radius:8px;">
+  
+  <h2 style="margin-top:0;">Upload Your Financial Documents</h2>
+  <p style="color:#666;">Securely submit your documents for assessment.</p>
+  
+  <form id="uploadForm" style="display:flex; flex-direction:column; gap:20px;">
+    
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Your WhatsApp Number</label>
+      <input type="tel" id="whatsapp_number" placeholder="+65 8193 2026" required style="padding:10px; border:1px solid #ddd; border-radius:4px; width:100%; font-size:16px;">
+    </div>
+
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Your Business Name</label>
+      <input type="text" id="business_name" placeholder="Your company name" required style="padding:10px; border:1px solid #ddd; border-radius:4px; width:100%; font-size:16px;">
+    </div>
+
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Bank Statements (Latest 6 Months)</label>
+      <input type="file" id="bank_statements" accept=".pdf,.jpg,.jpeg,.png" multiple required style="padding:8px; border:1px solid #ddd; border-radius:4px; width:100%;">
+      <small style="color:#999;">PDF or image, max 10MB per file. Upload multiple files.</small>
+    </div>
+
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Credit Bureau Report</label>
+      <input type="file" id="credit_report" accept=".pdf,.jpg,.jpeg,.png" multiple required style="padding:8px; border:1px solid #ddd; border-radius:4px; width:100%;">
+      <small style="color:#999;">PDF or image, max 10MB per file. Upload multiple files.</small>
+    </div>
+
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Financial Statements</label>
+      <input type="file" id="financial_statements" accept=".pdf,.jpg,.jpeg,.png" multiple required style="padding:8px; border:1px solid #ddd; border-radius:4px; width:100%;">
+      <small style="color:#999;">PDF or image, max 10MB per file. Upload multiple files.</small>
+    </div>
+
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Notice of Assessment (NOA)</label>
+      <input type="file" id="noa" accept=".pdf,.jpg,.jpeg,.png" multiple required style="padding:8px; border:1px solid #ddd; border-radius:4px; width:100%;">
+      <small style="color:#999;">PDF or image, max 10MB per file. Upload multiple files.</small>
+    </div>
+
+    <button type="submit" style="padding:12px 24px; background:#007558; color:white; border:none; border-radius:4px; font-weight:600; cursor:pointer; font-size:16px;">Upload Securely</button>
+    
+    <div id="uploadStatus" style="display:none; padding:12px; border-radius:4px; text-align:center; font-weight:500;"></div>
+    
+  </form>
+
+  <div style="margin-top:24px; padding:16px; background:white; border-left:4px solid #007558; border-radius:4px;">
+    <small style="color:#666;">
+      <strong>✓ HTTPS Encrypted</strong> — Files transmitted securely<br>
+      <strong>✓ Verified Domain</strong> — Email from admin@liquidify.sg<br>
+      <strong>✓ Private Access</strong> — Only Liquidify receives documents
+    </small>
+  </div>
+
+</section>
+
+<!-- UPLOAD HANDLER SCRIPT -->
+<script>
+document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const statusDiv = document.getElementById('uploadStatus');
+  statusDiv.style.display = 'block';
+  statusDiv.textContent = '⏳ Uploading...';
+  statusDiv.style.background = '#fff3e0';
+  statusDiv.style.color = '#e65100';
+
+  try {
+    const fileInputs = {
+      bank_statements: document.getElementById('bank_statements').files,
+      credit_report: document.getElementById('credit_report').files,
+      financial_statements: document.getElementById('financial_statements').files,
+      noa: document.getElementById('noa').files
+    };
+
+    const attachments = [];
+    for (let fileType in fileInputs) {
+      const files = fileInputs[fileType];
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const base64 = await fileToBase64(file);
+        attachments.push({
+          filename: file.name,
+          content: base64,
+          type: file.type
+        });
+      }
+    }
+
+    const response = await fetch('/.netlify/functions/upload-documents', {
+      method: 'POST',
+      body: JSON.stringify({
+        business_name: document.getElementById('business_name').value,
+        whatsapp_number: document.getElementById('whatsapp_number').value,
+        attachments: attachments
+      })
+    });
+
+    if (response.ok) {
+      statusDiv.textContent = '✓ Documents uploaded successfully! Check your WhatsApp for next steps.';
+      statusDiv.style.background = '#e8f5e9';
+      statusDiv.style.color = '#2e7d32';
+      document.getElementById('uploadForm').reset();
+    } else {
+      throw new Error('Upload failed');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    statusDiv.textContent = '✗ Upload failed. Please try again.';
+    statusDiv.style.background = '#ffebee';
+    statusDiv.style.color = '#c62828';
+  }
+});
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = reject;
+  });
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  var sgd = function(n){
+    return "S$" + Math.round(n).toLocaleString("en-SG");
+  };
+
+  // amortised monthly payment
+  function pmt(principal, annualRatePct, years){
+    var r = (annualRatePct/100)/12, n = years*12;
+    if(r === 0) return principal/n;
+    return principal * r / (1 - Math.pow(1+r, -n));
+  }
+  // principal supportable from a given monthly payment
+  function pv(payment, annualRatePct, years){
+    var r = (annualRatePct/100)/12, n = years*12;
+    if(r === 0) return payment*n;
+    return payment * (1 - Math.pow(1+r, -n)) / r;
+  }
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ---------- tabs ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
+  tabs.forEach(function(tab, i){
+    tab.addEventListener("click", function(){
+      tabs.forEach(function(t, j){
+        var selected = i === j;
+        t.setAttribute("aria-selected", selected ? "true" : "false");
+        var panel = $("panel-" + (j+1));
+        if(panel) panel.hidden = !selected;
+      });
+    });
+    tab.addEventListener("keydown", function(e){
+      var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+      if(!dir) return;
+      e.preventDefault();
+      var next = tabs[(i + dir + tabs.length) % tabs.length];
+      next.focus(); next.click();
+    });
+  });
+
+  /* ---------- calculator 1: repayment ---------- */
+  function calc1(){
+    var amt = +$("c1-amt").value, rate = +$("c1-rate").value, yrs = +$("c1-yrs").value;
+    $("c1-amt-o").textContent = sgd(amt);
+    $("c1-rate-o").textContent = rate.toFixed(1) + "%";
+    $("c1-yrs-o").textContent = yrs + (yrs === 1 ? " year" : " years");
+    var m = pmt(amt, rate, yrs), total = m*yrs*12, interest = total - amt;
+    $("c1-monthly").textContent = sgd(m);
+    $("c1-total").textContent = sgd(total);
+    $("c1-int").textContent = sgd(interest);
+    $("c1-pct").textContent = (interest/amt*100).toFixed(1) + "%";
+  }
+  ["c1-amt","c1-rate","c1-yrs"].forEach(function(id){ $(id).addEventListener("input", calc1); });
+  calc1();
+
+  /* ---------- calculator 2: borrowing capacity ---------- */
+  function calc2(){
+    var inc = +$("c2-inc").value, com = +$("c2-com").value,
+        rate = +$("c2-rate").value, yrs = +$("c2-yrs").value;
+    $("c2-inc-o").textContent = sgd(inc);
+    $("c2-com-o").textContent = sgd(com);
+    $("c2-rate-o").textContent = rate.toFixed(1) + "%";
+    $("c2-yrs-o").textContent = yrs + (yrs === 1 ? " year" : " years");
+    var avail = Math.max(0, inc*0.55 - com);
+    var cap = pv(avail, rate, yrs);
+    $("c2-avail").textContent = sgd(avail);
+    $("c2-cap").textContent = sgd(cap);
+    $("c2-mrate").textContent = (rate/12).toFixed(3) + "%";
+  }
+  ["c2-inc","c2-com","c2-rate","c2-yrs"].forEach(function(id){ $(id).addEventListener("input", calc2); });
+  calc2();
+
+  /* ---------- calculator 3: refinancing ---------- */
+  function calc3(){
+    var bal = +$("c3-bal").value, cur = +$("c3-cur").value,
+        nw = +$("c3-new").value, yrs = +$("c3-yrs").value;
+    $("c3-bal-o").textContent = sgd(bal);
+    $("c3-cur-o").textContent = cur.toFixed(1) + "%";
+    $("c3-new-o").textContent = nw.toFixed(1) + "%";
+    $("c3-yrs-o").textContent = yrs + (yrs === 1 ? " year" : " years");
+    var cm = pmt(bal, cur, yrs), nm = pmt(bal, nw, yrs);
+    var ms = cm - nm, life = ms * yrs * 12;
+    $("c3-cm").textContent = sgd(cm);
+    $("c3-nm").textContent = sgd(nm);
+    $("c3-ms").textContent = sgd(ms);
+    $("c3-life").textContent = sgd(life);
+  }
+  ["c3-bal","c3-cur","c3-new","c3-yrs"].forEach(function(id){ $(id).addEventListener("input", calc3); });
+  calc3();
+
+  /* ---------- scroll reveal ---------- */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var items = document.querySelectorAll(".reveal");
+  if(reduce || !("IntersectionObserver" in window)){
+    items.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- year ---------- */
+  $("yr").textContent = new Date().getFullYear();
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var body=document.body;
+  function lock(on){ body.classList[on?"add":"remove"]("locked"); }
+
+  /* ---------- drawer ---------- */
+  var drawer=document.getElementById("drawer"), menuBtn=document.getElementById("menuBtn");
+  function openDrawer(){
+    drawer.hidden=false; requestAnimationFrame(function(){ drawer.classList.add("open"); });
+    menuBtn.setAttribute("aria-expanded","true"); lock(true);
+  }
+  function closeDrawer(){
+    drawer.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false");
+    setTimeout(function(){ drawer.hidden=true; }, 280);
+    if(!sheet.classList.contains("open")) lock(false);
+    menuBtn.focus();
+  }
+  menuBtn.addEventListener("click", function(){
+    drawer.classList.contains("open") ? closeDrawer() : openDrawer();
+  });
+  drawer.querySelectorAll("[data-close-drawer]").forEach(function(el){
+    el.addEventListener("click", closeDrawer);
+  });
+  drawer.querySelectorAll("[data-nav]").forEach(function(a){
+    a.addEventListener("click", function(){ closeDrawer(); });
+  });
+
+  /* ---------- enquiry sheet ---------- */
+  var sheet=document.getElementById("enquiry"), lastFocus=null;
+  function openSheet(){
+    lastFocus=document.activeElement;
+    if(drawer.classList.contains("open")) closeDrawer();
+    sheet.hidden=false; requestAnimationFrame(function(){ sheet.classList.add("open"); });
+    lock(true);
+    var f=sheet.querySelector(".icon-btn"); if(f) f.focus();
+  }
+  function closeSheet(){
+    sheet.classList.remove("open");
+    setTimeout(function(){ sheet.hidden=true; }, 260);
+    lock(false);
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  document.querySelectorAll("[data-enquiry]").forEach(function(b){
+    b.addEventListener("click", openSheet);
+  });
+  sheet.querySelectorAll("[data-close-enquiry]").forEach(function(el){
+    el.addEventListener("click", closeSheet);
+  });
+  sheet.querySelector("a[href^='https://wa.me']").addEventListener("click", function(){
+    setTimeout(closeSheet, 400);
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key!=="Escape") return;
+    if(sheet.classList.contains("open")) closeSheet();
+    else if(drawer.classList.contains("open")) closeDrawer();
+  });
+
+  /* ---------- FAQ feedback ---------- */
+  document.querySelectorAll(".faq-fb").forEach(function(box){
+    box.querySelectorAll(".fb-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        btn.classList.add("picked");
+        setTimeout(function(){
+          box.classList.add("done");
+          var t=document.createElement("p");
+          t.className="thanks";
+          t.textContent = btn.dataset.fb==="yes" ? "Thanks \u2014 glad that helped." : "Thanks \u2014 message us and we'll explain it properly.";
+          box.appendChild(t);
+        }, 160);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
