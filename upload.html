@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upload Your Documents | Liquidify</title>
+<meta name="description" content="Securely upload your financial documents to Liquidify for financing assessment.">
+<meta name="robots" content="noindex, nofollow">
+
+<!-- NO ANALYTICS / NO GTM / NO TRACKING TAGS ON THIS PAGE -->
+<!-- This page collects sensitive financial information. Do not add tracking here. -->
+
+<!-- favicons / app icons -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#00A47F">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Inter:wght@400;500;600&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Base tokens carried over from index.html so the form renders identically */
+:root{
+  --ink:#0A2A24;
+  --steel:#566E67;
+  --brass:#007558;
+  --brand:#00A47F;
+  --sea:#0D7A63;
+  --paper:#FAF9F5;
+  --rule:#D7DFDB;
+  --display:"Newsreader",Georgia,serif;
+  --body:"Inter",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16.5px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-height:1.14;margin:0}
+h2{font-size:clamp(1.85rem,3.9vw,2.85rem)}
+h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+p{margin:0 0 1rem}
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2.5px solid var(--sea);outline-offset:3px;border-radius:4px;
+}
+@media(max-width:640px){
+  #upload-form{margin:24px 16px !important;padding:24px !important}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY HEADER -->
+<header style="position: sticky; top: 0; background: white; border-bottom: 1px solid #e0e0e0; padding: 15px 20px; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+  <a href="/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+    <img src="logo.png" alt="Liquidify" style="height: 40px; width: auto;">
+    <span style="font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 1.3rem; color: #00A47F; text-transform: lowercase; letter-spacing: -0.01em;">liquidify</span>
+  </a>
+  <nav style="display: flex; gap: 20px; align-items: center; font-size: 14px;">
+    <a href="/" style="color: #017d76; text-decoration: none; font-weight: 500;">&larr; Back to Liquidify</a>
+    <a href="/privacy.html" style="color: #017d76; text-decoration: none; font-weight: 500;">Privacy</a>
+  </nav>
+</header>
+
+<!-- SECURE DOCUMENT UPLOAD FORM -->
+<section id="upload-form" style="max-width:600px; margin:60px auto; padding:40px; background:#f5f5f5; border-radius:8px;">
+  
+  <div style="text-align: center; margin-bottom: 30px;">
+    <img src="logo.png" alt="Liquidify" style="height: 60px; width: auto; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+    <h2 style="margin-top:0; font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 2.2rem; color: #00A47F; text-transform: lowercase; letter-spacing: -0.01em;">liquidify</h2>
+    <p style="color: #666; font-size: 14px;">Secure Document Assessment</p>
+  </div>
+  
+  <h2 style="margin-top:20px; text-align: center;">Upload Your Financial Documents</h2>
+  <p style="color:#666; text-align: center;">Add files one by one. Each category can have multiple documents.</p>
+  
+  <form id="uploadForm" style="display:flex; flex-direction:column; gap:20px;">
+    
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Your WhatsApp Number</label>
+      <input type="tel" id="whatsapp_number" placeholder="+65 8061 4848" required style="padding:10px; border:1px solid #ddd; border-radius:4px; width:100%; font-size:16px;">
+    </div>
+
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Your Business Name</label>
+      <input type="text" id="business_name" placeholder="Your company name" required style="padding:10px; border:1px solid #ddd; border-radius:4px; width:100%; font-size:16px;">
+    </div>
+
+    <!-- Bank Statements -->
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Bank Statements (Latest 6 Months)</label>
+      <button type="button" id="add_bank_btn" style="padding:8px 16px; background:#007558; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:600; margin-bottom:8px;">+ Add File</button>
+      <input type="file" id="bank_file_input" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
+      <div id="bank_list" style="display:flex; flex-direction:column; gap:8px;"></div>
+      <small style="color:#999;">PDF or image, max 10MB per file</small>
+    </div>
+
+    <!-- Credit Bureau Report -->
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Credit Bureau Report</label>
+      <button type="button" id="add_credit_btn" style="padding:8px 16px; background:#007558; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:600; margin-bottom:8px;">+ Add File</button>
+      <input type="file" id="credit_file_input" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
+      <div id="credit_list" style="display:flex; flex-direction:column; gap:8px;"></div>
+      <small style="color:#999;">PDF or image, max 10MB per file</small>
+    </div>
+
+    <!-- Financial Statements -->
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Financial Statements</label>
+      <button type="button" id="add_financial_btn" style="padding:8px 16px; background:#007558; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:600; margin-bottom:8px;">+ Add File</button>
+      <input type="file" id="financial_file_input" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
+      <div id="financial_list" style="display:flex; flex-direction:column; gap:8px;"></div>
+      <small style="color:#999;">PDF or image, max 10MB per file</small>
+    </div>
+
+    <!-- Notice of Assessment -->
+    <div>
+      <label style="display:block; margin-bottom:8px; font-weight:600;">Notice of Assessment (NOA) (Latest 2 Years)</label>
+      <button type="button" id="add_noa_btn" style="padding:8px 16px; background:#007558; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:600; margin-bottom:8px;">+ Add File</button>
+      <input type="file" id="noa_file_input" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
+      <div id="noa_list" style="display:flex; flex-direction:column; gap:8px;"></div>
+      <small style="color:#999;">PDF or image, max 10MB per file</small>
+    </div>
+
+    <button type="submit" style="padding:12px 24px; background:#007558; color:white; border:none; border-radius:4px; font-weight:600; cursor:pointer; font-size:16px;">Upload Securely</button>
+    
+    <div id="uploadStatus" style="display:none; padding:12px; border-radius:4px; text-align:center; font-weight:500;"></div>
+    
+  </form>
+
+  <div style="margin-top:24px; padding:16px; background:white; border-left:4px solid #007558; border-radius:4px;">
+    <small style="color:#666;">
+      <strong>✓ HTTPS Encrypted</strong> — Files transmitted securely<br>
+      <strong>✓ Verified Domain</strong> — Email from admin@liquidify.sg<br>
+      <strong>✓ Private Access</strong> — Only Liquidify receives documents
+    </small>
+  </div>
+
+  <div style="margin-top:16px; padding:16px; background:#f0f7f6; border:1px solid #007558; border-radius:4px;">
+    <p style="margin:0; font-size:13px; color:#333; line-height:1.6;">
+      <strong>Privacy & Data Protection</strong><br>
+      By submitting your documents, you agree that Liquidify will use your financial information solely to assess your financing eligibility. We will only retain your documents for as long as necessary to process your application. Your data is kept confidential and secure. We will not share your information with third parties without your consent.
+    </p>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer style="margin-top:60px; padding:40px 20px; background:#f0f7f6; border-top:1px solid #d0e8e5; text-align:center;">
+  <div style="max-width:600px; margin:0 auto;">
+    <img src="logo.png" alt="Liquidify" style="height: 50px; width: auto; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+    <h3 style="margin:0 0 10px 0; color:#017d76;">Liquidify Pte Ltd</h3>
+    <p style="margin:10px 0; font-size:14px; color:#666;">
+      <strong>WhatsApp:</strong> <a href="https://wa.me/6580614848" style="color:#017d76; text-decoration:none;">+65 8061 4848</a><br>
+      <strong>Email:</strong> <a href="mailto:admin@liquidify.sg" style="color:#017d76; text-decoration:none;">admin@liquidify.sg</a><br>
+      <strong>Website:</strong> <a href="https://liquidify.sg" style="color:#017d76; text-decoration:none;">liquidify.sg</a>
+    </p>
+    <p style="margin:20px 0 0 0; font-size:12px; color:#999;">
+      <a href="/privacy.html" style="color:#017d76; text-decoration:none;">Privacy Policy</a> | &copy; 2026 Liquidify Pte Ltd. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<!-- UPLOAD HANDLER SCRIPT -->
+<script>
+// File storage for each category
+const fileStorage = {
+  bank_statements: [],
+  credit_report: [],
+  financial_statements: [],
+  noa: []
+};
+
+// Setup file input handlers
+const categories = [
+  { btn: 'add_bank_btn', input: 'bank_file_input', list: 'bank_list', key: 'bank_statements' },
+  { btn: 'add_credit_btn', input: 'credit_file_input', list: 'credit_list', key: 'credit_report' },
+  { btn: 'add_financial_btn', input: 'financial_file_input', list: 'financial_list', key: 'financial_statements' },
+  { btn: 'add_noa_btn', input: 'noa_file_input', list: 'noa_list', key: 'noa' }
+];
+
+categories.forEach(cat => {
+  const addBtn = document.getElementById(cat.btn);
+  const fileInput = document.getElementById(cat.input);
+  
+  addBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    fileInput.click();
+  });
+  
+  fileInput.addEventListener('change', (e) => {
+    const files = e.target.files;
+    for (let i = 0; i < files.length; i++) {
+      fileStorage[cat.key].push(files[i]);
+    }
+    renderFileList(cat.key, cat.list);
+    fileInput.value = ''; // Reset so user can select same file again
+  });
+});
+
+function renderFileList(key, listId) {
+  const listEl = document.getElementById(listId);
+  listEl.innerHTML = '';
+  
+  fileStorage[key].forEach((file, index) => {
+    const fileItem = document.createElement('div');
+    fileItem.style.cssText = 'display:flex; justify-content:space-between; align-items:center; padding:10px; background:white; border-radius:4px; border:1px solid #ddd;';
+    
+    const fileName = document.createElement('span');
+    fileName.textContent = file.name;
+    fileName.style.cssText = 'font-size:14px; color:#333; flex:1;';
+    
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '✕';
+    deleteBtn.type = 'button';
+    deleteBtn.style.cssText = 'background:#ff4444; color:white; border:none; border-radius:4px; padding:4px 8px; cursor:pointer; font-weight:600; font-size:14px;';
+    deleteBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      fileStorage[key].splice(index, 1);
+      renderFileList(key, listId);
+    });
+    
+    fileItem.appendChild(fileName);
+    fileItem.appendChild(deleteBtn);
+    listEl.appendChild(fileItem);
+  });
+}
+
+// Handle form submission
+document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const statusDiv = document.getElementById('uploadStatus');
+  statusDiv.style.display = 'block';
+  statusDiv.textContent = '⏳ Uploading...';
+  statusDiv.style.background = '#fff3e0';
+  statusDiv.style.color = '#e65100';
+
+  try {
+    const attachments = [];
+    
+    // Collect all files from all categories
+    for (let key in fileStorage) {
+      for (let file of fileStorage[key]) {
+        const base64 = await fileToBase64(file);
+        attachments.push({
+          filename: file.name,
+          content: base64,
+          type: file.type
+        });
+      }
+    }
+
+    if (attachments.length === 0) {
+      statusDiv.textContent = '✗ Please add at least one file.';
+      statusDiv.style.background = '#ffebee';
+      statusDiv.style.color = '#c62828';
+      return;
+    }
+
+    const response = await fetch('/.netlify/functions/upload-documents', {
+      method: 'POST',
+      body: JSON.stringify({
+        business_name: document.getElementById('business_name').value,
+        whatsapp_number: document.getElementById('whatsapp_number').value,
+        attachments: attachments
+      })
+    });
+
+    if (response.ok) {
+      statusDiv.textContent = '✓ Documents uploaded successfully! Check your WhatsApp for next steps.';
+      statusDiv.style.background = '#e8f5e9';
+      statusDiv.style.color = '#2e7d32';
+      
+      // Clear all files
+      for (let key in fileStorage) {
+        fileStorage[key] = [];
+        const listId = key === 'bank_statements' ? 'bank_list' : 
+                       key === 'credit_report' ? 'credit_list' :
+                       key === 'financial_statements' ? 'financial_list' : 'noa_list';
+        renderFileList(key, listId);
+      }
+      
+      document.getElementById('uploadForm').reset();
+    } else {
+      throw new Error('Upload failed');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    statusDiv.textContent = '✗ Upload failed. Please try again.';
+    statusDiv.style.background = '#ffebee';
+    statusDiv.style.color = '#c62828';
+  }
+});
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result.split(',')[1]);
+    reader.onerror = reject;
+  });
+}
+</script>
+
+</body>
+</html>
