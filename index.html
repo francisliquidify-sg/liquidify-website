@@ -1,1322 +1,654 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-SG">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PFH7M7VC');</script>
-<!-- End Google Tag Manager -->
-
-<title>Liquidify | Business Financing for Singapore SMEs</title>
-<meta name="description" content="Liquidify helps Singapore SME owners find the right business financing. We assess which financing route your business qualifies for and manage the application through to disbursement.">
+<title>SME Business Loans Singapore | Liquidify</title>
+<meta name="description" content="Which bank? Am I eligible? Which loan is right for me? Liquidify assesses your business for free and submits to the banks most likely to say yes. Fee only on success.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://liquidify.sg/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Liquidify | Business Financing for Singapore SMEs">
-<meta property="og:description" content="There's more than one route to business financing. Understand which one your business actually qualifies for. Bank panel access, fees agreed upfront.">
-<meta property="og:url" content="https://liquidify.sg/">
-<meta property="og:locale" content="en_SG">
-<meta property="og:image" content="https://liquidify.sg/android-chrome-512x512.png">
-<meta property="og:image:width" content="512">
-<meta property="og:image:height" content="512">
-<meta name="twitter:card" content="summary">
-
-<!-- favicons / app icons -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://liquidify.sg/sme">
 <meta name="theme-color" content="#00A47F">
-<meta name="facebook-domain-verification" content="ce2mb8m4cv036owzkm6u5ehi14hscy" />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://liquidify.sg/sme">
+<meta property="og:title" content="Business loans for Singapore SMEs | Liquidify">
+<meta property="og:description" content="Free assessment. We tell you which banks are lending, whether you're eligible, and what fits — before you apply.">
+<meta property="og:image" content="https://liquidify.sg/og-sme.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+
+<!-- Google Tag Manager (same container as liquidify.sg) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PFH7M7VC');</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Quicksand:wght@500;600&display=swap" rel="stylesheet">
-
-<!-- Structured data: Liquidify as a business financing service (not a lender) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Liquidify",
-  "description": "Helping Singapore SME owners find the right business financing through banks and financial institutions.",
-  "url": "https://liquidify.sg/",
-  "areaServed": { "@type": "Country", "name": "Singapore" },
-  "serviceType": "Business financing services",
-  "email": "admin@liquidify.sg"
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
 
 <style>
-/* ============================================================
-   KEELPOINT — design tokens
-   Palette drawn from harbour/chart vernacular, not stock fintech.
-   ============================================================ */
 :root{
-  --ink:#0A2A24;        /* deep teal-black, headings + body */
-  --hull:#0F4438;       /* mid teal-green */
-  --steel:#566E67;      /* muted green-grey, secondary text */
-  --brass:#007558;      /* UI green — small text, links, buttons (AA on cream) */
-  --brand:#00A47F;      /* Liquidify brand green — logo + large elements only */
-  --brass-lt:#9EE3CD;   /* light brand tint, for dark backgrounds */
-  --sea:#0D7A63;        /* deeper signal green */
-  --mist:#EDF3F0;       /* soft green-tinted paper */
-  --paper:#FAF9F5;      /* cream, matches the logo ground */
-  --rule:#D7DFDB;
-  --white:#FFFFFF;
-
-  --display:"Newsreader",Georgia,serif;
-  --body:"Inter",system-ui,-apple-system,sans-serif;
-  --data:"IBM Plex Mono",ui-monospace,monospace;
-
-  --wrap:1160px;
-  --pad:clamp(20px,5vw,40px);
-  --r:14px;
+  --green:#00A47F; --green-d:#008566; --deep:#0B3B30; --ink:#10201B; --muted:#55665F;
+  --paper:#F5F8F6; --card:#FFFFFF; --line:#DCE5E0; --mint:#E3F4EE; --gold:#F5C542; --gold-soft:#FFF6D9;
+  --r:16px; --shadow:0 1px 2px rgba(16,32,27,.06),0 8px 24px rgba(16,32,27,.06);
 }
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font-family:var(--body);font-size:16.5px;line-height:1.62;
-  -webkit-font-smoothing:antialiased;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"DM Sans",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;font-size:16px;padding-bottom:84px}
 img{max-width:100%;display:block}
-a{color:inherit}
-h1,h2,h3,h4{font-family:var(--display);font-weight:400;letter-spacing:-.015em;line-height:1.14;margin:0}
-h1{font-size:clamp(2.35rem,5.6vw,4.05rem)}
-h2{font-size:clamp(1.85rem,3.9vw,2.85rem)}
-h3{font-size:clamp(1.15rem,2vw,1.4rem)}
-p{margin:0 0 1rem}
-.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+a{color:var(--green-d)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+h1 em,h2 em{font-style:italic;color:var(--green)}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green-d)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:16px 26px;font:600 16px/1 "DM Sans",sans-serif;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--green);color:#fff}
+.btn-primary:hover{background:var(--green-d)}
+.btn-wa{background:#1FAF55;color:#fff}
+.btn-wa:hover{background:#178f45}
+.btn-ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn svg{width:20px;height:20px;flex:none}
+.small{font-size:13px;color:var(--muted)}
 
-/* eyebrow: mono labels, like chart annotations */
-.eyebrow{
-  font-family:var(--data);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--brass);margin:0 0 .9rem;display:flex;align-items:center;gap:.7rem;
-}
-.eyebrow::after{content:"";height:1px;flex:1;background:var(--rule);max-width:120px}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(245,248,246,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--deep);font-weight:700;font-size:20px}
+.logo img{height:30px;width:auto}
+header .btn{padding:11px 18px;font-size:14px}
 
-section{padding:clamp(64px,9vw,110px) 0;position:relative}
-.section-dark{background:var(--ink);color:#E3EFEA}
-.section-dark h2,.section-dark h3{color:var(--white)}
-.section-dark .eyebrow{color:var(--brass-lt)}
-.section-dark .eyebrow::after{background:rgba(255,255,255,.18)}
-.section-mist{background:var(--mist)}
-.lede{font-size:clamp(1.02rem,1.6vw,1.16rem);color:var(--steel);max-width:60ch}
-.section-dark .lede{color:#9DB5AD}
+/* hero */
+.hero{padding:44px 0 36px}
+.hero h1{font-size:clamp(34px,7.4vw,58px);margin:14px 0 18px;max-width:14ch}
+.hero h1 span{display:block}
+.hero p.lead{font-size:clamp(17px,2.4vw,20px);color:var(--muted);max-width:52ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 14px}
+.ticks{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.ticks span::before{content:"✓";color:var(--green);font-weight:700;margin-right:6px}
 
-/* ---------- buttons ---------- */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-  font-family:var(--body);font-weight:600;font-size:.94rem;
-  padding:.92rem 1.5rem;border-radius:9px;border:1px solid transparent;
-  text-decoration:none;cursor:pointer;transition:background .18s,color .18s,border-color .18s,transform .18s;
-  min-height:48px;
-}
-.btn-primary{background:var(--brass);color:#fff}
-.btn-primary:focus-visible{outline-color:var(--ink)}
-.btn-primary:hover{background:#00876A}
-.btn-ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
-.btn-ghost:hover{border-color:var(--ink)}
-.section-dark .btn-ghost{color:#fff;border-color:rgba(255,255,255,.28)}
-.section-dark .btn-ghost:hover{border-color:#fff}
-.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
-  outline:2.5px solid var(--sea);outline-offset:3px;border-radius:4px;
-}
+/* promo */
+.promo{background:var(--deep);color:#fff;border-radius:22px;padding:28px 24px;position:relative;overflow:hidden}
+.promo::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(0,164,127,.45),transparent 70%)}
+.promo .tag{display:inline-block;background:var(--gold);color:#3A2C00;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:6px}
+.promo h2{font-size:clamp(26px,4.6vw,38px);margin:14px 0 18px;max-width:20ch}
+.promo h2 em{color:var(--gold)}
+.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 22px;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px}
+.stat b{display:block;font-family:"Fraunces",serif;font-size:28px;font-weight:600;color:#fff}
+.stat span{font-size:13px;color:#BFD7CF;line-height:1.35;display:block}
+.promo .twist{position:relative;z-index:1;background:#fff;color:var(--ink);border-radius:14px;padding:18px 18px 18px 20px;border-left:5px solid var(--gold)}
+.promo .twist strong{display:block;font-size:17px;margin-bottom:4px}
+.promo .fine{position:relative;z-index:1;font-size:12px;color:#9DBDB2;margin-top:14px}
 
-/* ---------- nav ---------- */
-header.nav{
-  position:sticky;top:0;z-index:60;background:rgba(250,249,245,.93);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
-}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:70px;gap:1.5rem}
-.brand{display:inline-flex;align-items:center;text-decoration:none;font-family:"Quicksand",var(--body);font-weight:600;font-size:1.5rem;letter-spacing:-.005em;color:var(--brand)}
-.mark{width:26px;height:26px;flex:none}
-.nav-links{display:none;gap:1.8rem;list-style:none;margin:0;padding:0}
-.nav-links a{text-decoration:none;font-size:.9rem;color:var(--steel);font-weight:500}
-.nav-links a:hover{color:var(--ink)}
-.nav-cta{display:none}
-@media(min-width:900px){.nav-links{display:flex}.nav-cta{display:inline-flex}}
+section{padding:56px 0}
+.sec-head{max-width:640px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(28px,5vw,40px);margin-top:10px}
+.sec-head p{color:var(--muted);margin-top:10px}
 
-/* ---------- hero ---------- */
-.hero{padding-top:clamp(52px,7vw,84px);padding-bottom:0;overflow:hidden}
-.hero-grid{display:grid;gap:clamp(38px,5vw,60px);align-items:center}
-@media(min-width:940px){.hero-grid{grid-template-columns:1.04fr .96fr}}
-.hero h1 em{font-style:italic;color:var(--hull)}
-.hero .lede{margin:1.4rem 0 2rem;font-size:clamp(1.05rem,1.7vw,1.2rem)}
-.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem}
-.hero-note{font-family:var(--data);font-size:.76rem;color:var(--steel);margin-top:1.3rem}
+/* checker */
+.checker{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:26px 22px;max-width:640px}
+.progress{display:flex;gap:6px;margin-bottom:22px}
+.progress i{flex:1;height:4px;border-radius:4px;background:var(--line)}
+.progress i.on{background:var(--green)}
+.step{display:none}
+.step.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.step h3{font-size:24px;margin-bottom:6px}
+.step .hint{color:var(--muted);font-size:15px;margin-bottom:18px}
+.opts{display:grid;gap:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px;font:500 16px "DM Sans",sans-serif;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--green)}
+.opt.sel{border-color:var(--green);background:var(--mint)}
+.opt small{display:block;color:var(--muted);font-size:13px;font-weight:400}
+.back{background:none;border:0;color:var(--muted);font:500 14px "DM Sans",sans-serif;margin-top:16px;cursor:pointer;padding:6px 0}
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+.field input{width:100%;padding:15px 14px;border:1.5px solid var(--line);border-radius:12px;font:16px "DM Sans",sans-serif;background:var(--paper);color:var(--ink)}
+.field input:focus{outline:none;border-color:var(--green);background:#fff}
+.err{color:#B3261E;font-size:13px;margin-top:6px;display:none}
+.result-badge{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--green-d);font-weight:700;font-size:13px;padding:7px 12px;border-radius:999px;margin-bottom:12px}
+.result-badge.warn{background:var(--gold-soft);color:#7A5A00}
+.result-badge.no{background:#F1F3F2;color:var(--muted)}
+.note{background:var(--paper);border-radius:12px;padding:14px;font-size:14px;color:var(--muted);margin:14px 0 18px}
 
-/* signature: the two-route chart */
-.routes{
-  background:var(--white);border:1px solid var(--rule);border-radius:var(--r);
-  padding:clamp(22px,3.4vw,32px);box-shadow:0 18px 44px -30px rgba(10,42,36,.34);
-}
-.routes-title{font-family:var(--data);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--steel);margin-bottom:1.3rem}
-.route{padding:1.05rem 0;border-top:1px solid var(--rule)}
-.route:first-of-type{border-top:none;padding-top:0}
-.route-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.35rem}
-.route-no{font-family:var(--data);font-size:.72rem;color:var(--brass);font-weight:500}
-.route-name{font-family:var(--display);font-size:1.12rem}
-.route-desc{font-size:.9rem;color:var(--steel);margin:0}
-.route-bar{height:5px;border-radius:3px;margin-top:.75rem;background:var(--mist);overflow:hidden}
-.route-bar span{display:block;height:100%;border-radius:3px}
-.route-a .route-bar span{width:38%;background:var(--steel)}
-.route-b .route-bar span{width:88%;background:var(--sea)}
-.routes-foot{
-  margin-top:1.25rem;padding-top:1.1rem;border-top:1px dashed var(--rule);
-  font-size:.86rem;color:var(--steel);
-}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.pstep{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px}
+.pstep .n{font-family:"Fraunces",serif;font-size:15px;color:var(--green);font-weight:600}
+.pstep h3{font-family:"DM Sans",sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin:8px 0 8px}
+.pstep p{font-size:15px;color:var(--muted)}
+.pstep.fee{background:var(--mint);border-color:#BFE6D8}
 
-/* trust strip */
-.strip{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--white);margin-top:clamp(52px,7vw,86px)}
-.strip-in{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
-@media(min-width:820px){.strip-in{grid-template-columns:repeat(4,1fr)}}
-.strip-item{padding:1.5rem var(--pad);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-@media(min-width:820px){.strip-item{border-bottom:none}.strip-item:last-child{border-right:none}}
-.strip-item:nth-child(2n){border-right:none}
-@media(min-width:820px){.strip-item:nth-child(2n){border-right:1px solid var(--rule)}}
-.strip-k{font-family:var(--data);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:.35rem}
-.strip-v{font-size:.92rem;color:var(--ink);font-weight:500;line-height:1.4}
+/* proof */
+.proof{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bigstat{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 22px;margin-bottom:30px}
+.bigstat b{font-family:"Fraunces",serif;font-size:clamp(52px,11vw,88px);line-height:.9;color:var(--deep);font-weight:600}
+.bigstat b small{font-size:.45em;color:var(--green)}
+.bigstat p{max-width:32ch;color:var(--muted);padding-bottom:8px}
+.cases{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.case{border:1px solid var(--line);border-radius:var(--r);padding:22px;background:var(--paper)}
+.case .who{font-size:13px;font-weight:600;color:var(--green-d);letter-spacing:.04em;text-transform:uppercase}
+.case h3{font-size:24px;margin:8px 0 10px}
+.case p{color:var(--muted);font-size:15px}
+.case .facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.case .facts span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:13px;font-weight:500}
+/* bank logo strip */
+.banks{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0 18px;margin-bottom:32px}
+.banks .lbl{text-align:center;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;align-items:center;gap:52px;width:max-content;animation:scroll 32s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.track img{display:block;width:auto;flex:none}
+@keyframes scroll{to{transform:translateX(calc(-50% - 26px))}}
+@media (prefers-reduced-motion:reduce){.track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;gap:24px 36px}.track .dup{display:none}.marquee{-webkit-mask-image:none;mask-image:none}}
+.banks .disc{text-align:center;font-size:11.5px;color:#8A9893;margin:16px auto 0;max-width:70ch;padding:0 16px}
+@media (max-width:480px){.track{gap:38px;animation-name:scrollm;animation-duration:26s}}
+@keyframes scrollm{to{transform:translateX(calc(-50% - 19px))}}
 
-/* ---------- generic grid + cards ---------- */
-.grid{display:grid;gap:1.15rem}
-.g2{grid-template-columns:1fr}
-.g3{grid-template-columns:1fr}
-@media(min-width:700px){.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1000px){.g3{grid-template-columns:repeat(3,1fr)}}
-.card{
-  background:var(--white);border:1px solid var(--rule);border-radius:var(--r);
-  padding:clamp(20px,2.6vw,26px);transition:border-color .2s,transform .2s,box-shadow .2s;
-}
-.card:hover{border-color:#B2C4BD;transform:translateY(-2px);box-shadow:0 14px 34px -26px rgba(10,42,36,.32)}
-.card h3{margin-bottom:.55rem}
-.card p{font-size:.93rem;color:var(--steel);margin-bottom:.9rem}
-.card ul{margin:0 0 1rem;padding-left:1.05rem;font-size:.88rem;color:var(--steel)}
-.card li{margin-bottom:.28rem}
-.card-link{font-family:var(--data);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);text-decoration:none;font-weight:500}
-.card-link:hover{text-decoration:underline}
-.icon{width:34px;height:34px;margin-bottom:1rem;color:var(--hull)}
-
-/* ---------- process ---------- */
-.steps{counter-reset:s;display:grid;gap:0;margin-top:2.4rem}
-.step{
-  display:grid;grid-template-columns:auto 1fr;gap:1.3rem;
-  padding:1.6rem 0;border-top:1px solid rgba(255,255,255,.14);
-}
-.step:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
-.step-n{font-family:var(--data);font-size:.78rem;color:var(--brass-lt);padding-top:.35rem}
-.step h3{margin-bottom:.35rem}
-.step p{color:#9DB5AD;font-size:.93rem;margin:0}
-
-/* ---------- calculators ---------- */
-.calc-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
-.tab{
-  font-family:var(--body);font-size:.86rem;font-weight:500;padding:.62rem 1.05rem;
-  border:1px solid var(--rule);background:var(--white);border-radius:8px;cursor:pointer;color:var(--steel);
-  min-height:44px;
-}
-.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
-.calc{
-  background:var(--white);border:1px solid var(--rule);border-radius:var(--r);
-  padding:clamp(20px,3vw,30px);
-}
-.calc-grid{display:grid;gap:clamp(24px,3.4vw,40px)}
-@media(min-width:840px){.calc-grid{grid-template-columns:1.05fr .95fr}}
-.field{margin-bottom:1.35rem}
-.field label{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.86rem;font-weight:500;margin-bottom:.5rem}
-.field output{font-family:var(--data);font-size:.9rem;color:var(--hull)}
-input[type=range]{
-  width:100%;height:26px;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer;
-}
-input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--mist);border-radius:2px}
-input[type=range]::-moz-range-track{height:4px;background:var(--mist);border-radius:2px}
-input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--brass);
-  border:3px solid #fff;box-shadow:0 1px 5px rgba(10,42,36,.26);margin-top:-8px;
-}
-input[type=range]::-moz-range-thumb{
-  width:20px;height:20px;border-radius:50%;background:var(--brass);border:3px solid #fff;
-  box-shadow:0 1px 5px rgba(10,42,36,.26);
-}
-.readout{background:var(--ink);border-radius:var(--r);padding:clamp(20px,3vw,28px);color:#fff;align-self:start}
-.readout-main{border-bottom:1px solid rgba(255,255,255,.16);padding-bottom:1.1rem;margin-bottom:1.1rem}
-.readout-k{font-family:var(--data);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lt);margin-bottom:.4rem}
-.readout-v{font-family:var(--data);font-size:clamp(1.8rem,4vw,2.35rem);font-weight:500;letter-spacing:-.02em;line-height:1.1}
-.readout-row{display:flex;justify-content:space-between;gap:1rem;font-size:.88rem;padding:.42rem 0;color:#9DB5AD}
-.readout-row b{font-family:var(--data);font-weight:500;color:#fff}
-.disclaimer{font-size:.78rem;color:var(--steel);margin-top:1.3rem;line-height:1.55}
-
-/* ---------- placeholder blocks (owner fills with real data) ---------- */
-.placeholder{
-  border:1px dashed var(--brass);background:#F3FBF8;border-radius:var(--r);
-  padding:clamp(20px,3vw,26px);
-}
-.placeholder .tag{
-  font-family:var(--data);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--brass);margin-bottom:.7rem;
-}
-.placeholder p{font-size:.9rem;color:var(--steel);margin-bottom:.5rem}
-.placeholder p:last-child{margin-bottom:0}
-
-/* ---------- FAQ ---------- */
-.faq{max-width:800px}
-details{border-bottom:1px solid var(--rule);padding:.35rem 0}
-summary{
-  cursor:pointer;list-style:none;padding:1.05rem 0;font-weight:500;font-size:1rem;
-  display:flex;justify-content:space-between;align-items:center;gap:1.5rem;min-height:48px;
-}
+/* faq */
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px}
+summary{cursor:pointer;list-style:none;padding:18px 48px 18px 18px;font-weight:600;position:relative}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--data);font-size:1.25rem;color:var(--brass);flex:none;transition:transform .2s}
+summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--green);font-weight:400}
 details[open] summary::after{content:"–"}
-details p{font-size:.93rem;color:var(--steel);padding-bottom:1.1rem;margin:0;max-width:70ch}
+details p{padding:0 18px 18px;color:var(--muted)}
 
-/* ---------- contact ---------- */
-.contact-grid{display:grid;gap:clamp(28px,4vw,52px)}
-@media(min-width:880px){.contact-grid{grid-template-columns:1fr 1fr}}
-.wa{
-  background:var(--white);border:1px solid var(--rule);border-radius:var(--r);
-  padding:clamp(22px,3vw,30px);
-}
-.wa-pre{
-  font-family:var(--data);font-size:.8rem;background:var(--mist);border-radius:9px;
-  padding:1rem 1.1rem;margin:1.1rem 0 1.3rem;color:var(--hull);line-height:1.8;white-space:pre-line;
-}
-.detail-row{display:flex;gap:.8rem;padding:.85rem 0;border-bottom:1px solid var(--rule);font-size:.92rem}
-.detail-row:last-child{border-bottom:none}
-.detail-k{font-family:var(--data);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);min-width:88px;padding-top:.18rem;flex:none}
-.detail-v a{color:var(--hull);text-decoration:none;border-bottom:1px solid var(--rule)}
-.detail-v a:hover{border-color:var(--hull)}
+.final{text-align:center}
+.final h2{font-size:clamp(28px,5vw,40px);max-width:18ch;margin:0 auto 14px}
+.final p{color:var(--muted);margin-bottom:22px}
 
-/* ---------- footer ---------- */
-footer{background:var(--ink);color:#8FA79F;padding:clamp(52px,7vw,76px) 0 2.4rem;font-size:.86rem}
-footer h4{font-family:var(--data);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lt);margin-bottom:.9rem;font-weight:500}
-.foot-grid{display:grid;gap:2.2rem;margin-bottom:2.6rem}
-@media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
-footer a{color:#AECBC1;text-decoration:none}
-footer a:hover{color:#fff}
-.foot-legal{border-top:1px solid rgba(255,255,255,.13);padding-top:1.8rem;font-size:.76rem;line-height:1.7;color:#7C948C}
-.foot-legal p{margin-bottom:.8rem;max-width:88ch}
-.foot-links{list-style:none;margin:0;padding:0}
-.foot-links li{margin-bottom:.5rem}
+footer{background:var(--deep);color:#B9D0C8;font-size:13px;padding:36px 0 30px}
+footer strong{color:#fff}
+footer p{margin-bottom:10px;max-width:80ch}
+footer a{color:#fff}
 
 /* sticky mobile CTA */
-.sticky-cta{
-  position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:.6rem;
-  padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));
-  background:rgba(250,249,245,.96);backdrop-filter:blur(10px);border-top:1px solid var(--rule);
-}
-.sticky-cta .btn{flex:1}
-@media(min-width:900px){.sticky-cta{display:none}}
-@media(max-width:899px){body{padding-bottom:78px}}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;gap:10px;transform:translateY(110%);transition:transform .25s}
+.sticky.show{transform:none}
+.sticky .btn{flex:1;padding:15px 12px}
 
+@media (max-width:820px){
+  .steps{grid-template-columns:1fr 1fr}
+  .cases{grid-template-columns:1fr}
+  .promo-grid{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .stat{padding:12px 10px}.stat b{font-size:22px}.stat span{font-size:12px}
+}
+@media (max-width:480px){
+  .wrap{padding:0 16px}
+  .hero{padding:32px 0 28px}
+  .steps{grid-template-columns:1fr}
+  .opts.two{grid-template-columns:1fr 1fr}
+  .checker{padding:22px 16px}
+  section{padding:44px 0}
+  header .btn{display:none}
+}
+@media (min-width:821px){ body{padding-bottom:0} .sticky{display:none} }
+/* ===== batch 2 additions ===== */
+.live{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--green-d);background:var(--mint);border:1px solid #BFE6D8;border-radius:999px;padding:9px 14px}
+.live i{width:8px;height:8px;border-radius:50%;background:#1FAF55;box-shadow:0 0 0 0 rgba(31,175,85,.5);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 7px rgba(31,175,85,0)}100%{box-shadow:0 0 0 0 rgba(31,175,85,0)}}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}}
+.hero .ctas{align-items:center}
 
-/* ============================================================
-   NAV RIGHT + HAMBURGER
-   ============================================================ */
-.nav-right{display:flex;align-items:center;gap:.6rem}
-.menu-btn{
-  display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
-  width:46px;height:46px;padding:0 11px;border:1px solid var(--rule);border-radius:9px;
-  background:var(--white);cursor:pointer;flex:none;
-}
-.menu-btn span{display:block;height:2px;background:var(--ink);border-radius:2px;transition:transform .22s,opacity .22s}
-.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
-.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(min-width:900px){.menu-btn{display:none}}
+/* promo calculator */
+.calc{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 18px;margin:0 0 16px}
+.calc-row{margin-bottom:14px}.calc-row:last-child{margin-bottom:0}
+.calc-row label{display:flex;justify-content:space-between;font-size:14px;color:#BFD7CF;margin-bottom:8px}
+.calc-row label b{color:#fff;font-weight:600}
+.calc input[type=range]{width:100%;accent-color:var(--gold);height:28px;cursor:pointer}
+.calc-out{background:#fff;color:var(--ink);border-radius:14px;padding:16px 16px;text-align:center}
+.calc-out span{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.calc-out b{display:block;font-family:"Fraunces",serif;font-size:clamp(32px,6vw,40px);font-weight:600;color:var(--deep);line-height:1.1;margin:6px 0 4px}
+.calc-out small{display:block;font-size:12.5px;color:var(--muted)}
 
-/* ============================================================
-   SLIDE-OUT DRAWER
-   ============================================================ */
-.drawer{position:fixed;inset:0;z-index:200}
-.drawer[hidden]{display:none}
-.drawer-scrim{position:absolute;inset:0;background:rgba(10,42,36,.5);opacity:0;transition:opacity .25s}
-.drawer.open .drawer-scrim{opacity:1}
-.drawer-panel{
-  position:absolute;top:0;right:0;bottom:0;width:min(330px,86vw);
-  background:var(--paper);border-left:1px solid var(--rule);
-  display:flex;flex-direction:column;
-  transform:translateX(100%);transition:transform .28s cubic-bezier(.32,.72,0,1);
-  padding:0 0 calc(1rem + env(safe-area-inset-bottom));overflow-y:auto;
-}
-.drawer.open .drawer-panel{transform:none}
-.drawer-head{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem 1.2rem;border-bottom:1px solid var(--rule);
-  position:sticky;top:0;background:var(--paper);z-index:2;
-}
-.drawer-brand{font-family:"Quicksand",var(--body);font-weight:600;font-size:1.3rem;color:var(--brand)}
-.icon-btn{
-  width:44px;height:44px;border:1px solid var(--rule);border-radius:9px;background:var(--white);
-  font-size:1.35rem;line-height:1;color:var(--ink);cursor:pointer;flex:none;
-}
-.icon-btn:hover{border-color:var(--ink)}
-.drawer-panel nav{display:flex;flex-direction:column;padding:.5rem 0}
-.drawer-panel nav a{
-  padding:.95rem 1.2rem;text-decoration:none;color:var(--ink);font-size:1rem;font-weight:500;
-  border-bottom:1px solid var(--rule);min-height:52px;display:flex;align-items:center;
-}
-.drawer-panel nav a:active{background:var(--mist)}
-.drawer-foot{padding:1.3rem 1.2rem 0}
-.drawer-note{font-family:var(--data);font-size:.72rem;color:var(--steel);text-align:center;margin:.8rem 0 0}
+/* check + promise layout */
+.check-grid{display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:28px;align-items:start}
+.promise{background:var(--deep);color:#fff;border-radius:22px;padding:24px 22px}
+.promise h3{font-size:22px;margin-bottom:16px}
+.promise ol{list-style:none;counter-reset:pr;display:grid;gap:16px;margin-bottom:20px}
+.promise li{counter-increment:pr;position:relative;padding-left:40px}
+.promise li::before{content:counter(pr);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#3A2C00;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+.promise li b{display:block;font-size:16px;margin-bottom:2px}
+.promise li span{font-size:14.5px;color:#C9DDD6}
+.promise .live{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#fff}
 
-/* ============================================================
-   ENQUIRY SHEET
-   ============================================================ */
-.sheet{position:fixed;inset:0;z-index:210}
-.sheet[hidden]{display:none}
-.sheet-scrim{position:absolute;inset:0;background:rgba(10,42,36,.55);opacity:0;transition:opacity .25s}
-.sheet.open .sheet-scrim{opacity:1}
-.sheet-panel{
-  position:absolute;left:50%;top:50%;transform:translate(-50%,-46%) scale(.98);
-  width:min(560px,92vw);max-height:88vh;overflow-y:auto;
-  background:var(--paper);border:1px solid var(--rule);border-radius:16px;
-  box-shadow:0 30px 70px -30px rgba(10,42,36,.5);
-  opacity:0;transition:opacity .25s,transform .25s;
+/* credit enquiry warning */
+.credit{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.credit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.credit h2{font-size:clamp(28px,5vw,40px);margin:10px 0 12px}
+.credit p{color:var(--muted);margin-bottom:12px}
+.report{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.report .rh{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line);font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.report .rh em{font-style:normal;color:#B3261E;background:#FDECEA;border-radius:999px;padding:4px 10px;letter-spacing:0;text-transform:none;font-size:12.5px}
+.report ul{list-style:none}
+.report li{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px dashed var(--line);font-size:14.5px}
+.report li span{color:var(--muted);font-size:13px}
+.report li b{font-weight:600}
+.report li b::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#E5534B;margin-right:10px;vertical-align:middle}
+.report .rf{padding:14px 18px;background:var(--mint);font-size:14.5px;color:var(--green-d);font-weight:600}
+.report .rf::before{content:"✓ ";font-weight:700}
+
+/* how we work + video */
+.how{display:grid;grid-template-columns:300px 1fr;gap:32px;align-items:start}
+.how .steps{grid-template-columns:1fr 1fr}
+.vid{position:relative;border-radius:22px;overflow:hidden;background:#0B3B30;aspect-ratio:9/16;box-shadow:var(--shadow)}
+.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.vid .snd{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(11,59,48,.82);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:9px 13px;font:600 13px "DM Sans",sans-serif;cursor:pointer;backdrop-filter:blur(6px)}
+.vid .snd svg{width:16px;height:16px}
+@media (max-width:900px){
+  .check-grid{grid-template-columns:1fr}
+  .credit .wrap{grid-template-columns:1fr}
+  .how{grid-template-columns:1fr}
+  .vid{max-width:300px;margin:0 auto;width:100%}
 }
-.sheet.open .sheet-panel{opacity:1;transform:translate(-50%,-50%) scale(1)}
-.sheet-head{
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:1.1rem 1.4rem;border-bottom:1px solid var(--rule);
-  position:sticky;top:0;background:var(--paper);border-radius:16px 16px 0 0;z-index:2;
-}
-.sheet-body{padding:1.5rem 1.4rem 1.7rem}
-.sheet-body .wa-pre{margin:1.1rem 0 1.2rem}
-/* full-screen on phones */
-@media(max-width:640px){
-  .sheet-panel{
-    left:0;top:auto;bottom:0;transform:translateY(100%);width:100%;max-height:92vh;
-    border-radius:18px 18px 0 0;border-left:none;border-right:none;border-bottom:none;
-  }
-  .sheet.open .sheet-panel{transform:none}
-  .sheet-head{border-radius:18px 18px 0 0}
-  .sheet-body{padding-bottom:calc(1.7rem + env(safe-area-inset-bottom))}
+@media (max-width:600px){
+  .calc{grid-template-columns:1fr}
+  .how .steps{grid-template-columns:1fr}
 }
 
-/* ============================================================
-   FAQ FEEDBACK
-   ============================================================ */
-.faq-fb{
-  display:flex;align-items:center;flex-wrap:wrap;gap:.55rem;
-  padding:0 0 1.15rem;margin-top:-.35rem;
-}
-.faq-fb span{font-family:var(--data);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);margin-right:.2rem}
-.fb-btn{
-  font-family:var(--body);font-size:.82rem;font-weight:500;padding:.5rem .95rem;min-height:44px;
-  border:1px solid var(--rule);background:var(--white);border-radius:20px;color:var(--steel);cursor:pointer;
-  transition:border-color .18s,color .18s,background .18s;
-}
-.fb-btn:hover{border-color:var(--brass);color:var(--brass)}
-.fb-btn.picked{background:var(--brass);border-color:var(--brass);color:#fff}
-.faq-fb.done .fb-btn{display:none}
-.faq-fb .thanks{
-  font-size:.84rem;color:var(--brass);font-weight:500;font-family:var(--body);
-  letter-spacing:0;text-transform:none;margin:0;
-}
-
-/* ============================================================
-   FOOTER LEGAL TOGGLE
-   ============================================================ */
-.legal-toggle{border-bottom:none;padding:0}
-.legal-toggle summary{
-  padding:.9rem 0;font-size:.88rem;color:#AECBC1;font-weight:500;min-height:46px;
-}
-.legal-toggle summary::after{color:#9EE3CD}
-.legal-body{padding-top:.4rem}
-.copyline{margin:1.1rem 0 0;font-size:.76rem;color:#7C948C}
-
-/* ============================================================
-   SMALL-SCREEN POLISH
-   ============================================================ */
-@media(max-width:640px){
-  h1{font-size:clamp(2rem,8.4vw,2.6rem);line-height:1.1}
-  .hero{padding-top:34px}
-  .hero .lede{margin:1.1rem 0 1.5rem;font-size:1rem}
-  .hero-actions{flex-direction:column;align-items:stretch}
-  .hero-actions .btn{width:100%}
-  .hero-note{text-align:center;margin-top:1rem}
-  .hero-grid{gap:30px}
-  section{padding:52px 0}
-  .strip-item{padding:1.15rem var(--pad)}
-  .calc-tabs{gap:.4rem}
-  .tab{flex:1 1 auto;text-align:center;padding:.6rem .5rem;font-size:.8rem}
-  .readout-v{font-size:1.9rem}
-  .foot-grid{gap:1.8rem}
-  .detail-k{min-width:76px}
-  summary{font-size:.95rem}
-}
-@media(max-width:380px){
-  :root{--pad:16px}
-  body{font-size:15.5px}
-  h1{font-size:2rem}
-  .brand{font-size:1.3rem}
-  .btn{font-size:.9rem;padding:.85rem 1.1rem}
-  .wa-pre{font-size:.74rem}
-  .strip-in{grid-template-columns:1fr}
-  .strip-item{border-right:none}
-}
-/* stop background scroll when an overlay is open */
-body.locked{overflow:hidden}
-
-
-/* ============================================================
-   INSTITUTION MARQUEE
-   ============================================================ */
-.mq-sec{padding:clamp(38px,5vw,58px) 0;background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.mq{
-  overflow:hidden;margin:1.4rem 0 1.3rem;position:relative;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
-}
-.mq-track{
-  display:flex;align-items:center;width:max-content;
-  animation:mq-scroll 42s linear infinite;
-}
-.mq:hover .mq-track,.mq:focus-within .mq-track{animation-play-state:paused}
-@keyframes mq-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.mq-item{
-  flex:none;padding:0 clamp(22px,3.4vw,44px);
-  font-family:var(--display);font-size:clamp(1.05rem,2.1vw,1.4rem);
-  color:var(--hull);white-space:nowrap;letter-spacing:-.01em;opacity:.72;
-}
-/* swap a name for a logo by replacing the span with: <img class="mq-logo" src="/logos/x.svg" alt="X"> */
-.mq-logo{
-  flex:none;height:clamp(22px,3.2vw,30px);width:auto;
-  margin:0 clamp(22px,3.4vw,44px);
-  filter:grayscale(1);opacity:.62;
-}
-.mq-note{
-  font-size:.78rem;line-height:1.6;color:var(--steel);max-width:80ch;margin:0;
-}
-@media (prefers-reduced-motion:reduce){
-  .mq{-webkit-mask-image:none;mask-image:none;overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .mq-track{animation:none}
-}
-@media(max-width:640px){
-  .mq-track{animation-duration:26s}
-}
-
-/* reveal on scroll */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFH7M7VC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFH7M7VC"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="brand" href="#top" aria-label="Liquidify home">liquidify</a>
-    <nav aria-label="Main">
-      <ul class="nav-links">
-        <li><a href="#routes">Two routes</a></li>
-        <li><a href="#solutions">Financing</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#calculators">Calculators</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="nav-right">
-      <button class="btn btn-primary nav-cta" data-enquiry type="button">Check your options</button>
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+<header>
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Liquidify home"><img src="/logo.png" alt="" onerror="this.remove()">liquidify</a>
+    <a class="btn btn-primary" href="#check">Check eligibility</a>
   </div>
 </header>
 
-<!-- slide-out navigation -->
-<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Site navigation" hidden>
-  <div class="drawer-scrim" data-close-drawer></div>
-  <aside class="drawer-panel">
-    <div class="drawer-head">
-      <span class="drawer-brand">liquidify</span>
-      <button class="icon-btn" data-close-drawer type="button" aria-label="Close menu">&#215;</button>
-    </div>
-    <nav aria-label="Sections">
-      <a href="#top" data-nav>Home</a>
-      <a href="#routes" data-nav>Two routes</a>
-      <a href="#solutions" data-nav>Financing solutions</a>
-      <a href="#process" data-nav>Our process</a>
-      <a href="#calculators" data-nav>Calculators</a>
-      <a href="#about" data-nav>About</a>
-      <a href="#contact" data-nav>Contact</a>
-      <a href="#faq" data-nav>FAQ</a>
-      <a href="#legal" data-nav>Legal &amp; policies</a>
-    </nav>
-    <div class="drawer-foot">
-      <button class="btn btn-primary" style="width:100%" data-enquiry type="button">Check which route fits you</button>
-      <p class="drawer-note">No cost to ask &middot; No obligation</p>
-    </div>
-  </aside>
-</div>
-
-<main id="top">
-
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Singapore SME business financing</p>
-      <h1>There's more than <em>one</em> route to business financing.</h1>
-      <p class="lede">Most business owners are assessed on company revenue alone — and stop asking when the answer is no. A second route exists, assessed on entirely different criteria. Knowing which one fits your business is the difference between a decline and a disbursement.</p>
-      <div class="hero-actions">
-        <button class="btn btn-primary" data-enquiry type="button">Check which route fits you</button>
-        <a class="btn btn-ghost" href="#routes">See how assessment works</a>
+<main>
+  <!-- HERO: picks up the video's three questions -->
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Business loans · Singapore SMEs</div>
+      <h1><span>Which bank?</span><span>Am I eligible?</span><span><em>Which one fits me?</em></span></h1>
+      <p class="lead">We answer all three before you apply anywhere. Startup or established, we assess your business for free, work out which banks are lending right now, and plan the submission with you in person.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#check">Check if I'm eligible · 30 sec</a>
+        <span class="live"><i></i>Replies anytime, incl. weekends</span>
       </div>
-      <p class="hero-note">No cost to ask · No obligation · Fee agreed upfront, only on success</p>
+      <div class="ticks"><span>Free assessment</span><span>Fee only on success</span><span>Startups welcome</span></div>
     </div>
+  </div>
 
-    <!-- SIGNATURE ELEMENT: the two-route chart -->
-    <div class="routes reveal" id="routes-chart">
-      <p class="routes-title">How your application gets assessed</p>
+  <!-- BANK LOGOS -->
+  <div class="banks" aria-label="Banks we submit applications through">
+    <div class="lbl">Applications submitted through</div>
+    <div class="marquee"><div class="track"><img src="/logos/dbs.svg" alt="DBS" height="34" style="height:34px"><img src="/logos/ocbc.svg" alt="OCBC" height="33" style="height:33px"><img src="/logos/uob.svg" alt="UOB" height="34" style="height:34px"><img src="/logos/maybank.svg" alt="Maybank" height="30" style="height:30px"><img src="/logos/cimb.svg" alt="CIMB" height="33" style="height:33px"><img src="/logos/standard-chartered.svg" alt="Standard Chartered" height="40" style="height:40px"><img src="/logos/hsbc.svg" alt="HSBC" height="33" style="height:33px"><img src="/logos/maribank.svg" alt="MariBank" height="29" style="height:29px"><img src="/logos/gxs.svg" alt="GXS Bank" height="32" style="height:32px"><img src="/logos/dbs.svg" alt="" height="34" style="height:34px" class="dup" aria-hidden="true"><img src="/logos/ocbc.svg" alt="" height="33" style="height:33px" class="dup" aria-hidden="true"><img src="/logos/uob.svg" alt="" height="34" style="height:34px" class="dup" aria-hidden="true"><img src="/logos/maybank.svg" alt="" height="30" style="height:30px" class="dup" aria-hidden="true"><img src="/logos/cimb.svg" alt="" height="33" style="height:33px" class="dup" aria-hidden="true"><img src="/logos/standard-chartered.svg" alt="" height="40" style="height:40px" class="dup" aria-hidden="true"><img src="/logos/hsbc.svg" alt="" height="33" style="height:33px" class="dup" aria-hidden="true"><img src="/logos/maribank.svg" alt="" height="29" style="height:29px" class="dup" aria-hidden="true"><img src="/logos/gxs.svg" alt="" height="32" style="height:32px" class="dup" aria-hidden="true"></div></div>
+    <p class="disc">Liquidify is not affiliated with, endorsed by, or an agent of these institutions. Logos are trademarks of their respective owners. Panel availability varies by case.</p>
+  </div>
 
-      <div class="route route-a">
-        <div class="route-head">
-          <span class="route-no">Route A</span>
-          <span class="route-name">Assessed on company turnover</span>
+  <!-- PROMO -->
+  <div class="wrap">
+    <div class="promo">
+      <span class="tag">Limited window · ends 31 Mar 2027</span>
+      <h2>Working capital loans are the <em>cheapest</em> they've been since Covid.</h2>
+      <div class="promo-grid">
+        <div class="stat"><b>~3.3%</b><span>p.a. rates seen*</span></div>
+        <div class="stat"><b>70%</b><span>gov't risk share, up from 50%*</span></div>
+        <div class="stat"><b>5 yrs</b><span>tenure</span></div>
+      </div>
+      <div class="calc" id="calc">
+        <div>
+          <div class="calc-row"><label for="cAmt">Loan amount <b id="cAmtL">S$300,000</b></label><input type="range" id="cAmt" min="50000" max="500000" step="10000" value="300000"></div>
+          <div class="calc-row"><label for="cTen">Tenure <b id="cTenL">5 years</b></label><input type="range" id="cTen" min="1" max="5" step="1" value="5"></div>
         </div>
-        <p class="route-desc">The traditional working capital loan. Banks look first at annual revenue, trading history and company creditworthiness. Businesses that fall short on those measures are declined on this route alone.</p>
-        <div class="route-bar" aria-hidden="true"><span></span></div>
+        <div class="calc-out" aria-live="polite"><span>Est. monthly repayment</span><b id="cOut">S$5,431</b><small>at 3.3% p.a. · total interest <span id="cInt">S$25,880</span></small></div>
+      </div>
+      <div class="twist">
+        <strong>The rate isn't the only thing that changed.</strong>
+        With the government carrying more of the risk, some banks are lending far more aggressively than others. Knowing which ones are saying yes right now, and to which kind of business, is the difference between an approval and a decline.
+      </div>
+      <p class="fine">*Indicative of rates recently seen under government-supported working capital financing. Repayment estimate assumes 3.3% p.a. on a reducing balance and is for illustration only. Actual rate, quantum and eligibility depend on the lender's assessment of your documents. Government risk share of up to 70% applies to eligible enterprises. Scheme terms are set by the government and participating lenders and may change.</p>
+    </div>
+  </div>
+
+  <!-- ELIGIBILITY CHECK -->
+  <section id="check">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Free eligibility check</div>
+        <h2>Three taps. Then we take it from there on WhatsApp.</h2>
       </div>
 
-      <div class="route route-b">
-        <div class="route-head">
-          <span class="route-no">Route B</span>
-          <span class="route-name">Assessed on director's profile</span>
+      <div class="check-grid">
+      <div class="checker" id="checker">
+        <div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+
+        <!-- Step 1 -->
+        <div class="step active" data-step="1">
+          <h3>Do you own or run a Singapore-registered business?</h3>
+          <p class="hint">Sole proprietor, partner, or company director all count.</p>
+          <div class="opts two">
+            <button class="opt" data-q="owner" data-v="Yes">Yes</button>
+            <button class="opt" data-q="owner" data-v="No">No</button>
+          </div>
         </div>
-        <p class="route-desc">An unsecured business facility weighted on the director's personal credit standing and income tax Notices of Assessment, rather than company turnover.</p>
-        <div class="route-bar" aria-hidden="true"><span></span></div>
+
+        <!-- Step 2 -->
+        <div class="step" data-step="2">
+          <h3>Your residency status?</h3>
+          <p class="hint">Different lenders, different criteria. This tells us which ones to look at.</p>
+          <div class="opts two">
+            <button class="opt" data-q="status" data-v="Singapore Citizen">Singapore Citizen</button>
+            <button class="opt" data-q="status" data-v="PR">PR</button>
+            <button class="opt" data-q="status" data-v="Employment Pass">Employment Pass</button>
+            <button class="opt" data-q="status" data-v="Work Permit">Work Permit</button>
+          </div>
+          <button class="back" data-back>← Back</button>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" data-step="3">
+          <h3>Roughly how much do you need?</h3>
+          <p class="hint">A ballpark is fine.</p>
+          <div class="opts two">
+            <button class="opt" data-q="amount" data-v="Under S$100k">Under S$100k</button>
+            <button class="opt" data-q="amount" data-v="S$100k – S$300k">S$100k – 300k</button>
+            <button class="opt" data-q="amount" data-v="S$300k – S$1M">S$300k – 1M</button>
+            <button class="opt" data-q="amount" data-v="Above S$1M">Above S$1M</button>
+          </div>
+          <button class="back" data-back>← Back</button>
+        </div>
+
+        <!-- Step 4: result + contact -->
+        <div class="step" data-step="4">
+          <div id="res-local">
+            <span class="result-badge">✓ Good fit for a free assessment</span>
+            <h3>You're in the right place.</h3>
+            <p class="hint">As a Singapore business owner you can be assessed across our full bank panel, including the current working capital window.</p>
+          </div>
+          <div id="res-foreign" hidden>
+            <span class="result-badge warn">✓ Possible, via private funders</span>
+            <h3>There's a route for you.</h3>
+            <p class="hint">Foreign business owners can be funded through our private funders. The deciding factor is usually <b>strong business bank statements</b>. We'll tell you quickly if yours are there.</p>
+          </div>
+
+          <form id="lead" novalidate>
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" autocomplete="name" required>
+              <div class="err" id="err-name">Please enter your name.</div>
+            </div>
+            <div class="field">
+              <label for="mobile">Mobile number</label>
+              <input id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="8123 4567" required>
+              <div class="err" id="err-mobile">Please enter a valid mobile number.</div>
+            </div>
+            <button class="btn btn-wa" type="submit" style="width:100%">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+              Continue on WhatsApp
+            </button>
+            <p class="small" style="margin-top:12px">Your answers are pre-filled, so just hit send. We reply anytime, including evenings and weekends. Please don't send NRIC numbers or bank logins in chat.</p>
+          </form>
+          <button class="back" data-back>← Back</button>
+        </div>
+
+        <!-- Not eligible -->
+        <div class="step" data-step="no">
+          <span class="result-badge no">Not the right fit</span>
+          <h3>This one's for business owners.</h3>
+          <p class="hint">The financing we arrange is for owners and directors of Singapore-registered businesses, so we're not able to help with this enquiry. Thanks for checking. If you start or take over a business, we'd be glad to hear from you.</p>
+          <button class="back" data-restart>← Start again</button>
+        </div>
       </div>
-
-      <p class="routes-foot">Two structures, two sets of eligibility criteria. A business that doesn't clear the first can still be viable on the second — which is the conversation most owners never get to have.</p>
-    </div>
-  </div>
-
-  <!-- trust strip: factual, verifiable claims only -->
-  <div class="strip">
-    <div class="wrap" style="padding-left:0;padding-right:0;max-width:var(--wrap)">
-      <div class="strip-in">
-        <div class="strip-item"><p class="strip-k">Independent</p><p class="strip-v">We compare across a panel of banks and financial institutions, not one lender's book.</p></div>
-        <div class="strip-item"><p class="strip-k">Transparent</p><p class="strip-v">Our service fee is agreed in writing before you commit to anything.</p></div>
-        <div class="strip-item"><p class="strip-k">Handled end to end</p><p class="strip-v">Structuring, documentation and submission through the banker, managed for you.</p></div>
-        <div class="strip-item"><p class="strip-k">Direct access</p><p class="strip-v">You deal with one consultant throughout — not a call centre queue.</p></div>
+      <aside class="promise" aria-label="Our promise">
+        <h3>Our promise to you</h3>
+        <ol>
+          <li><b>A straight answer</b><span>If you don't qualify yet, we'll tell you, along with what would need to change.</span></li>
+          <li><b>Fee only on success</b><span>Agreed with you upfront. No approval, no fee. The assessment is free.</span></li>
+          <li><b>Nothing goes out without your OK</b><span>No lender sees your documents or runs a credit check until you approve the submission.</span></li>
+        </ol>
+        <span class="live"><i></i>Replies anytime, incl. weekends</span>
+      </aside>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ INSTITUTION MARQUEE ============ -->
-<section class="mq-sec">
-  <div class="wrap">
-    <p class="eyebrow reveal">Applications submitted through</p>
-  </div>
-
-  <div class="mq" role="img" aria-label="Banks and financial institutions Liquidify submits applications to: DBS, OCBC, UOB, Maybank, CIMB, Standard Chartered, RHB, HSBC, Hong Leong Finance, Sing Investments and Finance, IFS Capital, ORIX">
-    <div class="mq-track">
-        <span class="mq-item">DBS</span>
-        <span class="mq-item">OCBC</span>
-        <span class="mq-item">UOB</span>
-        <span class="mq-item">Maybank</span>
-        <span class="mq-item">CIMB</span>
-        <span class="mq-item">Standard Chartered</span>
-        <span class="mq-item">RHB</span>
-        <span class="mq-item">HSBC</span>
-        <span class="mq-item">Hong Leong Finance</span>
-        <span class="mq-item">Sing Investments &amp; Finance</span>
-        <span class="mq-item">IFS Capital</span>
-        <span class="mq-item">ORIX</span>
-        <span class="mq-item">DBS</span>
-        <span class="mq-item">OCBC</span>
-        <span class="mq-item">UOB</span>
-        <span class="mq-item">Maybank</span>
-        <span class="mq-item">CIMB</span>
-        <span class="mq-item">Standard Chartered</span>
-        <span class="mq-item">RHB</span>
-        <span class="mq-item">HSBC</span>
-        <span class="mq-item">Hong Leong Finance</span>
-        <span class="mq-item">Sing Investments &amp; Finance</span>
-        <span class="mq-item">IFS Capital</span>
-        <span class="mq-item">ORIX</span>
-    </div>
-  </div>
-
-  <div class="wrap">
-    <p class="mq-note reveal">Liquidify is not a bank or a lender, and is not affiliated with, endorsed by, or acting as an agent of these institutions. Applications are prepared and submitted for assessment; all lending decisions and terms rest with the institution. Panel availability varies by case.</p>
-  </div>
-</section>
-
-<!-- ============ THE TWO ROUTES, EXPANDED ============ -->
-<section id="routes" class="section-mist">
-  <div class="wrap">
-    <p class="eyebrow reveal">The part most owners miss</p>
-    <h2 class="reveal" style="max-width:20ch">Turnover is a criterion, not a verdict.</h2>
-    <p class="lede reveal" style="margin-top:1.2rem">Two facilities can fund the same business and be assessed on completely different things. Understanding which door you're knocking on changes the outcome — and, in one case, changes what the loan does to your borrowing capacity later.</p>
-
-    <div class="grid g2" style="margin-top:2.6rem">
-      <div class="card reveal">
-        <h3>Route A — the turnover test</h3>
-        <p>Traditional working capital and term loans start with the company's financials. Revenue, trading history and company creditworthiness carry the assessment.</p>
+  <!-- CREDIT ENQUIRY WARNING -->
+  <section class="credit">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Before you apply anywhere</div>
+        <h2>Applying bank by bank can <em>hurt</em> your chances.</h2>
+        <p>Every loan application leaves an enquiry on your credit report, and the next bank can see it. Several in a short time can look like you've been turned down elsewhere, which makes the next yes harder to get.</p>
+        <p>We work out which banks are likely to approve <b>before</b> anything is submitted, so you're not collecting enquiries for nothing.</p>
+      </div>
+      <div class="report" aria-label="Illustration of a credit report with multiple enquiries">
+        <div class="rh">Credit report · enquiries <em>4 in 30 days</em></div>
         <ul>
-          <li>Best fit for established businesses with steady, documented revenue</li>
-          <li>Typically the lowest cost of funds when you qualify</li>
-          <li>Newer businesses, or those with thinner revenue, are frequently declined here</li>
+          <li><b>Bank A · business loan</b><span>Declined</span></li>
+          <li><b>Bank B · business loan</b><span>Declined</span></li>
+          <li><b>Bank C · business loan</b><span>Pending</span></li>
+          <li><b>Bank D · business loan</b><span>Pending</span></li>
         </ul>
-        <p style="margin-bottom:0;font-size:.88rem"><strong>If this is a no,</strong> it is a no about <em>this product</em> — not about your business.</p>
-      </div>
-
-      <div class="card reveal">
-        <h3>Route B — the director's profile</h3>
-        <p>An unsecured business facility weighted on the director rather than the company. Personal credit standing and income tax Notices of Assessment do the heavy lifting.</p>
-        <ul>
-          <li>Opens a route for newer or smaller-turnover businesses</li>
-          <li>Structured as a business facility, so it doesn't sit on your consumer credit file</li>
-          <li>Doesn't consume the TDSR headroom you'll need for a property purchase</li>
-        </ul>
-        <p style="margin-bottom:0;font-size:.88rem"><strong>Why that last point matters:</strong> if a mortgage is anywhere in your plans, how a facility is structured affects what you can borrow later.</p>
+        <div class="rf">With Liquidify: the right banks first, planned with you</div>
       </div>
     </div>
+  </section>
 
-    <p class="disclaimer reveal" style="max-width:78ch">Eligibility, structure and treatment vary by lender and by your circumstances. Nothing here is an offer of credit or a statement that you will qualify — the purpose of a consultation is to work out which route, if any, actually fits your numbers.</p>
-  </div>
-</section>
-
-<!-- ============ SOLUTIONS ============ -->
-<section id="solutions">
-  <div class="wrap">
-    <p class="eyebrow reveal">What we arrange</p>
-    <h2 class="reveal" style="max-width:22ch">Financing matched to the need, not to a product sheet.</h2>
-
-    <div class="grid g3" style="margin-top:2.6rem">
-      <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
-        <h3>Business term loan</h3>
-        <p>A lump sum repaid over a fixed period. The workhorse facility for expansion, hiring, or consolidating costlier borrowing.</p>
-        <ul><li>Fixed, plannable repayments</li><li>Assessed on turnover or director profile</li></ul>
-        <a class="card-link" href="#contact">Check eligibility →</a>
+  <!-- PROCESS: mirrors the video -->
+  <section style="padding-top:8px">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">How we work</div>
+        <h2>We do the thinking <em>before</em> the bank does.</h2>
+        <p>Most declines come from applying to the wrong bank, or presenting the right business badly. Our process is built to avoid both.</p>
       </div>
-
-      <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12h18M12 3v18M7 7l10 10M17 7L7 17"/></svg>
-        <h3>Working capital</h3>
-        <p>Funding for day-to-day operations — payroll, stock, supplier terms — where timing, not profitability, is the constraint.</p>
-        <ul><li>Sized to operating cycle</li><li>Includes government-supported schemes where eligible</li></ul>
-        <a class="card-link" href="#contact">Check eligibility →</a>
+      <div class="how">
+      <div class="vid">
+        <video id="adv" muted loop playsinline preload="none" poster="/sme/media/poster.jpg" aria-label="How Liquidify works, 23-second video">
+          <source src="/sme/media/liquidify-sme.mp4" type="video/mp4">
+        </video>
+        <button class="snd" id="snd" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path id="sndx" d="M22 9l-6 6M16 9l6 6"/></svg><span>Tap for sound</span></button>
       </div>
-
-      <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 4h12l4 4v12H4zM16 4v4h4M8 13h8M8 17h5"/></svg>
-        <h3>Invoice financing</h3>
-        <p>Release cash tied up in receivables when customers pay on long terms but your obligations don't wait.</p>
-        <ul><li>Advances against confirmed invoices</li><li>Scales with your order book</li></ul>
-        <a class="card-link" href="#contact">Check eligibility →</a>
+      <div class="steps">
+        <div class="pstep"><div class="n">01</div><h3>Free assessment</h3><p>Send us your documents. We review them the way a credit officer will, and work out which banks may be suitable.</p></div>
+        <div class="pstep"><div class="n">02</div><h3>Plan in person</h3><p>We meet you face to face to propose your financing options, planned around your long-term needs, not just this loan.</p></div>
+        <div class="pstep"><div class="n">03</div><h3>Strategise</h3><p>We decide which lenders, in what order, and how your application is presented, then submit strategically.</p></div>
+        <div class="pstep fee"><div class="n">04</div><h3>Pay on success</h3><p>Our fee is agreed upfront and only payable when your financing comes through. No approval, no fee.</p></div>
       </div>
-
-      <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-5.6 7-5.6s7 2 7 5.6"/></svg>
-        <h3>Personal capital</h3>
-        <p>Where the business is newer or turnover is thin, financing assessed on the director's own profile can be the route that opens.</p>
-        <ul><li>Weighted on personal credit standing and Notices of Assessment</li><li>Useful when company financials alone fall short</li></ul>
-        <a class="card-link" href="#contact">Check eligibility →</a>
-      </div>
-
-      <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 12h20M6 8l-4 4 4 4M18 8l4 4-4 4"/></svg>
-        <h3>Trade financing</h3>
-        <p>Bridge the gap between paying suppliers and being paid by buyers across an import or export cycle.</p>
-        <ul><li>Structured around the trade cycle</li><li>Supports overseas supplier terms</li></ul>
-        <a class="card-link" href="#contact">Check eligibility →</a>
-      </div>
-
-      <div class="card reveal">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10l9-6 9 6v10H3zM9 20v-6h6v6"/></svg>
-        <h3>Property-backed financing</h3>
-        <p>Larger facilities secured against property, where a business needs scale that unsecured lending won't reach.</p>
-        <ul><li>Higher quantum, longer tenure</li><li>Assessed on asset and profile together</li></ul>
-        <a class="card-link" href="#contact">Check eligibility →</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ PROCESS ============ -->
-<section id="process" class="section-dark">
-  <div class="wrap">
-    <p class="eyebrow reveal">How it works</p>
-    <h2 class="reveal" style="max-width:20ch">Four steps, and you'll know where you stand after the first.</h2>
-
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-n">01</div>
-        <div>
-          <h3>Conversation</h3>
-          <p>A short conversation about your business, what the funding is for, and your timeline. No documents needed to start, and no cost to ask.</p>
-        </div>
+  <!-- PROOF -->
+  <section class="proof">
+    <div class="wrap">
+      <div class="bigstat">
+        <b>S$25M<small>/mth</small></b>
+        <p>Working capital secured for business owners on average every month across our firm, OneSuite Advisory Pte Ltd.</p>
       </div>
-      <div class="step reveal">
-        <div class="step-n">02</div>
-        <div>
-          <h3>Assessment</h3>
-          <p>We look at your position the way a credit assessor will — turnover, director profile, existing commitments — and tell you honestly which routes are realistic and which aren't.</p>
+      <div class="cases">
+        <div class="case">
+          <div class="who">Singapore business owner</div>
+          <h3>S$600k for an overseas expansion, funded in about a month.</h3>
+          <p>Expanding operations into Indonesia needed capital faster than a standard bank cycle. We structured the case and placed it with lenders who back regional expansion.</p>
+          <div class="facts"><span>S$600,000</span><span>~1 month</span><span>Expansion capital</span></div>
         </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-n">03</div>
-        <div>
-          <h3>Structuring and submission</h3>
-          <p>We prepare the application so it presents properly, then submit through the relevant banker on the panel. You approve the fee in writing before this stage.</p>
-        </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-n">04</div>
-        <div>
-          <h3>Outcome and disbursement</h3>
-          <p>We manage follow-ups and queries through to the lender's decision, and walk you through the terms before you accept anything.</p>
+        <div class="case">
+          <div class="who">Shipping company</div>
+          <h3>S$1M property cash-out plus a S$450k trade line.</h3>
+          <p>Unlocked equity in the owner's property for immediate liquidity, then set up trade financing so ongoing shipments no longer squeeze cash flow.</p>
+          <div class="facts"><span>S$1,000,000 cash-out</span><span>S$450,000 trade line</span></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <div style="margin-top:2.4rem">
-      <button class="btn btn-primary" data-enquiry type="button">Start with step one</button>
+  <!-- FAQ -->
+  <section>
+    <div class="wrap" style="max-width:760px">
+      <div class="sec-head"><div class="eyebrow">Common questions</div><h2>Before you message us</h2></div>
+      <details><summary>My business is new. Can I still qualify?</summary><p>Yes, we work with businesses from startup stage to established companies. Newer businesses are assessed differently, and some lenders are far more open to them than others. That's exactly what the free assessment is for.</p></details>
+      <details><summary>What does it cost?</summary><p>The assessment and in-person planning are free. Our service fee is agreed with you upfront and is only payable on success, when your financing is approved and disbursed.</p></details>
+      <details><summary>How fast can I get funded?</summary><p>It depends on the lender and how complete your documents are. Our job is to tell you quickly whether your case is realistic and which lenders will move fastest, so you're not waiting weeks to hear a no.</p></details>
+      <details><summary>I'm a foreigner who owns a business here. Can you help?</summary><p>Often, yes. Employment Pass and Work Permit holders who own a Singapore business can be funded through private funders, mainly on the strength of the business's bank statements.</p></details>
+      <details><summary>Are you a bank or lender?</summary><p>No. We're a financing broker. We assess your position, plan the strategy, prepare and submit your application, and follow it through. The lending decision, rate and terms are always the lender's.</p></details>
+      <details><summary>Does talking to you affect my credit?</summary><p>No. Having a conversation and an assessment with us doesn't touch your credit file. Lenders only run checks once you agree to submit an application.</p></details>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ CALCULATORS ============ -->
-<section id="calculators" class="section-mist">
-  <div class="wrap">
-    <p class="eyebrow reveal">Estimation tools</p>
-    <h2 class="reveal" style="max-width:24ch">Run the numbers before you talk to anyone.</h2>
-    <p class="lede reveal" style="margin-top:1.1rem">These give you an indicative picture using standard amortisation maths. They are planning tools, not lender quotes.</p>
-
-    <div class="calc-tabs reveal" role="tablist" aria-label="Calculators" style="margin-top:2rem">
-      <button class="tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Monthly repayment</button>
-      <button class="tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false">Borrowing capacity</button>
-      <button class="tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false">Refinancing savings</button>
+  <section class="final" style="padding-top:12px">
+    <div class="wrap">
+      <h2>Find out which banks will say yes, before you apply.</h2>
+      <p>Free assessment · Fee only on success · Replies anytime, incl. weekends</p>
+      <a class="btn btn-primary" href="#check">Check if I'm eligible</a>
     </div>
-
-    <!-- CALC 1 -->
-    <div class="calc" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
-      <div class="calc-grid">
-        <div>
-          <div class="field">
-            <label for="c1-amt">Loan amount <output id="c1-amt-o">S$100,000</output></label>
-            <input type="range" id="c1-amt" min="10000" max="1000000" step="5000" value="100000">
-          </div>
-          <div class="field">
-            <label for="c1-rate">Interest rate (p.a.) <output id="c1-rate-o">6.0%</output></label>
-            <input type="range" id="c1-rate" min="1" max="20" step="0.1" value="6">
-          </div>
-          <div class="field">
-            <label for="c1-yrs">Tenure <output id="c1-yrs-o">5 years</output></label>
-            <input type="range" id="c1-yrs" min="1" max="5" step="1" value="5">
-          </div>
-        </div>
-        <div class="readout">
-          <div class="readout-main">
-            <p class="readout-k">Monthly repayment</p>
-            <p class="readout-v" id="c1-monthly">S$1,933</p>
-          </div>
-          <div class="readout-row"><span>Total repayment</span><b id="c1-total">S$115,997</b></div>
-          <div class="readout-row"><span>Total interest</span><b id="c1-int">S$15,997</b></div>
-          <div class="readout-row"><span>Interest as % of principal</span><b id="c1-pct">16.0%</b></div>
-        </div>
-      </div>
-      <p class="disclaimer">Calculated on a standard reducing-balance amortisation. Actual repayments depend on the lender's rate basis (some business facilities use a flat or factor rate), fees, and final approved terms.</p>
-    </div>
-
-    <!-- CALC 2 -->
-    <div class="calc" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-      <div class="calc-grid">
-        <div>
-          <div class="field">
-            <label for="c2-inc">Monthly income <output id="c2-inc-o">S$12,000</output></label>
-            <input type="range" id="c2-inc" min="2000" max="80000" step="500" value="12000">
-          </div>
-          <div class="field">
-            <label for="c2-com">Existing monthly commitments <output id="c2-com-o">S$2,000</output></label>
-            <input type="range" id="c2-com" min="0" max="40000" step="250" value="2000">
-          </div>
-          <div class="field">
-            <label for="c2-rate">Assumed interest rate (p.a.) <output id="c2-rate-o">6.0%</output></label>
-            <input type="range" id="c2-rate" min="1" max="20" step="0.1" value="6">
-          </div>
-          <div class="field">
-            <label for="c2-yrs">Tenure <output id="c2-yrs-o">5 years</output></label>
-            <input type="range" id="c2-yrs" min="1" max="30" step="1" value="5">
-          </div>
-        </div>
-        <div class="readout">
-          <div class="readout-main">
-            <p class="readout-k">Indicative borrowing capacity</p>
-            <p class="readout-v" id="c2-cap">S$237,938</p>
-          </div>
-          <div class="readout-row"><span>Assumed servicing ratio</span><b>55%</b></div>
-          <div class="readout-row"><span>Available monthly servicing</span><b id="c2-avail">S$4,600</b></div>
-          <div class="readout-row"><span>Assumed monthly rate</span><b id="c2-mrate">0.500%</b></div>
-        </div>
-      </div>
-      <p class="disclaimer">A rough guide only, using a 55% servicing assumption. Lenders apply their own ratios, stress rates and policy rules, and business facilities are assessed differently from personal borrowing. This is not an indication that any amount will be approved.</p>
-    </div>
-
-    <!-- CALC 3 -->
-    <div class="calc" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
-      <div class="calc-grid">
-        <div>
-          <div class="field">
-            <label for="c3-bal">Outstanding balance <output id="c3-bal-o">S$300,000</output></label>
-            <input type="range" id="c3-bal" min="20000" max="2000000" step="10000" value="300000">
-          </div>
-          <div class="field">
-            <label for="c3-cur">Current rate (p.a.) <output id="c3-cur-o">7.0%</output></label>
-            <input type="range" id="c3-cur" min="1" max="20" step="0.1" value="7">
-          </div>
-          <div class="field">
-            <label for="c3-new">New rate (p.a.) <output id="c3-new-o">5.0%</output></label>
-            <input type="range" id="c3-new" min="1" max="20" step="0.1" value="5">
-          </div>
-          <div class="field">
-            <label for="c3-yrs">Remaining tenure <output id="c3-yrs-o">10 years</output></label>
-            <input type="range" id="c3-yrs" min="1" max="30" step="1" value="10">
-          </div>
-        </div>
-        <div class="readout">
-          <div class="readout-main">
-            <p class="readout-k">Estimated total saving</p>
-            <p class="readout-v" id="c3-life">S$36,155</p>
-          </div>
-          <div class="readout-row"><span>Current monthly</span><b id="c3-cm">S$3,483</b></div>
-          <div class="readout-row"><span>New monthly</span><b id="c3-nm">S$3,182</b></div>
-          <div class="readout-row"><span>Monthly saving</span><b id="c3-ms">S$301</b></div>
-        </div>
-      </div>
-      <p class="disclaimer">Excludes prepayment penalties, legal and valuation costs, and lock-in periods, which can materially change whether refinancing is worthwhile. Compare total cost, not just the rate.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ WHY / ABOUT ============ -->
-<section id="about">
-  <div class="wrap">
-    <div class="grid g2" style="align-items:start;gap:clamp(32px,4.5vw,60px)">
-      <div class="reveal">
-        <p class="eyebrow">Why Liquidify</p>
-        <h2 style="max-width:18ch">A straight answer costs you nothing.</h2>
-        <p class="lede" style="margin-top:1.2rem">Plenty of businesses are told no once and stop asking. Others are pushed toward whichever facility earns the intermediary the most. Neither is advice.</p>
-        <p style="font-size:.95rem;color:var(--steel)">Liquidify works the other way round: understand the business first, be honest about what's realistic, and say so plainly when financing isn't the right answer right now. The fee is agreed in writing upfront and is payable on a successful outcome — so there is no incentive to push you toward something that won't complete.</p>
-
-        <div style="margin-top:1.8rem">
-          <div class="detail-row"><span class="detail-k">Independent</span><span class="detail-v">Panel access across banks and financial institutions</span></div>
-          <div class="detail-row"><span class="detail-k">Scope</span><span class="detail-v">Business financing — we are not a lender</span></div>
-          <div class="detail-row"><span class="detail-k">Fee</span><span class="detail-v">Agreed in writing before submission, payable on success</span></div>
-        </div>
-      </div>
-
-      <div class="reveal">
-        <div class="card" style="background:var(--mist);border-color:var(--rule)">
-          <p class="eyebrow" style="margin-bottom:1rem">What you can expect</p>
-          <div class="detail-row"><span class="detail-k">First reply</span><span class="detail-v">Same day, in most cases</span></div>
-          <div class="detail-row"><span class="detail-k">First answer</span><span class="detail-v">Which routes are realistic for your numbers — before any paperwork</span></div>
-          <div class="detail-row"><span class="detail-k">If it&rsquo;s a no</span><span class="detail-v">You&rsquo;ll be told plainly, and what would need to change</span></div>
-          <div class="detail-row"><span class="detail-k">No cost</span><span class="detail-v">The initial conversation is free and carries no obligation</span></div>
-          <p style="font-size:.9rem;color:var(--steel);margin:1.3rem 0 0">
-            Every case is different. The fastest way to know where you stand is a short conversation about your business and what the funding is for.
-          </p>
-          <button class="btn btn-primary" style="width:100%;margin-top:1.1rem" data-enquiry type="button">Check which route fits you</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONTACT ============ -->
-<section id="contact">
-  <div class="wrap">
-    <p class="eyebrow reveal">Get in touch</p>
-    <h2 class="reveal" style="max-width:22ch">Send four lines. We'll tell you which route fits.</h2>
-
-    <div class="contact-grid" style="margin-top:2.4rem">
-      <div class="wa reveal">
-        <h3 style="margin-bottom:.6rem">Message us on WhatsApp</h3>
-        <p style="font-size:.93rem;color:var(--steel)">Fastest way to get a straight answer. Tap below and it pre-fills these details — fill them in and send.</p>
-        <div class="wa-pre">Name:
-Business name:
-Average monthly revenue:
-Amount needed:
-Purpose of funds:</div>
-        <a class="btn btn-primary" style="width:100%" href="https://wa.me/6580614848?text=Hi%20Liquidify%2C%20I%27d%20like%20to%20check%20my%20financing%20options.%0A%0AName%3A%0ABusiness%20name%3A%0AAverage%20monthly%20revenue%3A%0AAmount%20needed%3A%0APurpose%20of%20funds%3A">Open WhatsApp</a>
-        <p class="disclaimer" style="margin-top:1.1rem">Please don't send NRIC numbers, bank login details or full financial documents in a first message — we'll tell you what's needed and how to send it securely.</p>
-      </div>
-
-      <div class="reveal">
-        <h3 style="margin-bottom:1.1rem">Details</h3>
-        <!-- ===== OWNER: fill in real contact details before publishing ===== -->
-        <div class="detail-row"><span class="detail-k">Email</span><span class="detail-v"><a href="mailto:admin@liquidify.sg">admin@liquidify.sg</a></span></div>
-        <div class="detail-row"><span class="detail-k">WhatsApp</span><span class="detail-v"><a href="https://wa.me/6580614848">+65 8061 4848</a></span></div>
-        <div class="detail-row"><span class="detail-k">Hours</span><span class="detail-v">Monday to Friday, 9am – 6pm (SGT)</span></div>
-        <div class="detail-row"><span class="detail-k">Serving</span><span class="detail-v">Singapore-registered businesses</span></div>
-        <div class="detail-row"><span class="detail-k">Entity</span><span class="detail-v">Liquidify Pte Ltd · UEN 202636137M</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
-<section id="faq" class="section-mist">
-  <div class="wrap">
-    <p class="eyebrow reveal">Questions owners actually ask</p>
-    <h2 class="reveal" style="max-width:20ch">Answered plainly, before you get in touch.</h2>
-
-    <div class="faq reveal" style="margin-top:2.2rem">
-      <details>
-        <summary>My turnover is too low for a bank loan. Is it worth talking to you?</summary>
-        <p>Very likely — that's precisely the situation where the assessment route matters. The traditional working capital loan leans on company revenue, but an unsecured facility assessed on the director's profile and income tax Notices of Assessment is a different test entirely. Whether you clear it depends on your personal credit standing and declared income, which is what a first conversation establishes.</p>
-      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
-      </details>
-      <details>
-        <summary>What do you charge?</summary>
-        <p>A service fee calculated as a percentage of the amount financed, agreed with you in writing before we submit anything, and payable on a successful outcome. The percentage depends on the complexity of the case and the facility involved. There is no charge for the initial conversation.</p>
-      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
-      </details>
-      <details>
-        <summary>Are you a lender?</summary>
-        <p>No. Liquidify helps you find and apply for business financing. We assess your position, structure the application, and submit it through the relevant banker or financial institution. The lending decision, the rate and the terms are always the lender's.</p>
-      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
-      </details>
-      <details>
-        <summary>Will this affect my ability to buy property later?</summary>
-        <p>It depends on how the facility is structured. A properly structured business facility is treated differently from personal borrowing when it comes to your consumer credit file and your TDSR headroom. If a property purchase is anywhere in your plans, say so at the outset — it should shape which route we pursue, not be discovered afterwards.</p>
-      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
-      </details>
-      <details>
-        <summary>What documents will I need?</summary>
-        <p>Nothing to start the conversation. For an application, expect company registration details, recent bank statements, financial statements where available, and the director's income tax Notices of Assessment. We'll tell you exactly what's needed for your specific route before you gather anything.</p>
-      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
-      </details>
-      <details>
-        <summary>How long does it take?</summary>
-        <p>It varies by lender and facility, and anyone quoting you a fixed timeline before seeing your case is guessing. What we can commit to is telling you quickly whether your case is realistic, so you're not waiting weeks to hear a no.</p>
-      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
-      </details>
-      <details>
-        <summary>What if I've been declined before?</summary>
-        <p>A decline is specific to a lender, a product and a moment. It's worth understanding <em>why</em> — whether it was turnover, documentation, existing commitments or how the application was presented — because that determines whether a different route is viable or whether the honest answer is to strengthen your position first.</p>
-      <div class="faq-fb"><span>Was this useful?</span><button type="button" class="fb-btn" data-fb="yes">Yes</button><button type="button" class="fb-btn" data-fb="no">No</button></div>
-      </details>
-    </div>
-  </div>
-</section>
-
+  </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <a class="brand" href="#top" style="color:#9EE3CD;margin-bottom:.9rem;display:inline-block">liquidify</a>
-        <p style="max-width:34ch">Helping Singapore SME owners find the right business financing — assessing which route you qualify for, and managing the application through to disbursement.</p>
-      </div>
-      <div>
-        <h4>Navigate</h4>
-        <ul class="foot-links">
-          <li><a href="#routes">How assessment works</a></li>
-          <li><a href="#solutions">Financing solutions</a></li>
-          <li><a href="#process">Our process</a></li>
-          <li><a href="#calculators">Calculators</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#legal">Legal &amp; policies</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul class="foot-links">
-          <li><a href="mailto:admin@liquidify.sg">admin@liquidify.sg</a></li>
-          <li><a href="https://wa.me/6580614848">WhatsApp</a></li>
-          <li>Mon–Fri, 9am–6pm SGT</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="foot-legal" id="legal">
-      <details class="legal-toggle">
-        <summary>Important legal information &amp; policies</summary>
-        <div class="legal-body">
-      <!-- ===== OWNER: have these reviewed before publishing, and add full policy pages ===== -->
-      <p><strong style="color:#AECBC1">What we are.</strong> Liquidify helps Singapore businesses find and apply for financing. We are not a bank, a lender, or a licensed moneylender, and we do not provide regulated financial advice. We assess your position, prepare and submit applications, and liaise with banks and financial institutions on your behalf. All lending decisions, rates and terms are determined solely by the lender.</p>
-      <p><strong style="color:#AECBC1">No offer of credit.</strong> Nothing on this site constitutes an offer of credit, a pre-approval, or an assurance that any application will succeed. Eligibility and terms depend on the lender's assessment of your circumstances.</p>
-      <p><strong style="color:#AECBC1">Estimates only.</strong> The calculators provide indicative figures using standard assumptions. They do not reflect any lender's actual pricing, fees or policy, and should not be relied on for financial decisions.</p>
-      <p><strong style="color:#AECBC1">Borrow responsibly.</strong> Business borrowing carries risk. Repayments must be met regardless of trading conditions, and directors may be personally liable under a personal guarantee. Consider whether the facility suits your cash flow before committing, and seek independent professional advice where appropriate.</p>
-      <p><strong style="color:#AECBC1">Your data.</strong> Information you provide is collected and used in accordance with Singapore's Personal Data Protection Act (PDPA), solely to assess and progress your enquiry. We do not sell your data. Add links here to your full Privacy Policy, Terms of Use and Cookie Policy before publishing.</p>
-        </div>
-      </details>
-      <p class="copyline">© <span id="yr">2026</span> Liquidify Pte Ltd &middot; UEN 202636137M. All rights reserved.</p>
-    </div>
+    <p><strong>Liquidify Pte Ltd</strong> · UEN 202636137M · WhatsApp <a href="https://wa.me/6580614848" data-wa-plain>+65 8061 4848</a></p>
+    <p>Liquidify is a financing broker, not a bank, lender or licensed moneylender, and does not provide regulated financial advice. Nothing on this page is an offer of credit or a guarantee of approval. All lending decisions, rates and terms are determined solely by the lender following assessment of your documents. Government-supported financing is subject to scheme terms set by the government and participating financial institutions, which may change. Business borrowing carries risk, and directors may be personally liable under a personal guarantee.</p>
+    <p>Information you submit is used in accordance with the PDPA solely to assess and progress your enquiry. <a href="/privacy">Privacy policy</a></p>
+    <p>© 2026 Liquidify Pte Ltd</p>
   </div>
 </footer>
 
-
-<!-- focused enquiry panel — opens in place instead of jumping to the page bottom -->
-<div class="sheet" id="enquiry" role="dialog" aria-modal="true" aria-labelledby="enqTitle" hidden>
-  <div class="sheet-scrim" data-close-enquiry></div>
-  <div class="sheet-panel">
-    <div class="sheet-head">
-      <p class="eyebrow" style="margin:0">Check your options</p>
-      <button class="icon-btn" data-close-enquiry type="button" aria-label="Close">&#215;</button>
-    </div>
-    <div class="sheet-body">
-      <h2 id="enqTitle" style="font-size:clamp(1.5rem,4.4vw,2rem);margin-bottom:.7rem">Send four lines. We'll tell you which route fits.</h2>
-      <p style="font-size:.95rem;color:var(--steel)">Fastest way to get a straight answer. Tap below and it pre-fills these details &mdash; fill them in and send.</p>
-      <div class="wa-pre">Name:
-Business name:
-Average monthly revenue:
-Amount needed:
-Purpose of funds:</div>
-      <a class="btn btn-primary" style="width:100%" href="https://wa.me/6580614848?text=Hi%20Liquidify%2C%20I%27d%20like%20to%20check%20my%20financing%20options.%0A%0AName%3A%0ABusiness%20name%3A%0AAverage%20monthly%20revenue%3A%0AAmount%20needed%3A%0APurpose%20of%20funds%3A">Open WhatsApp</a>
-      <p class="disclaimer">Please don't send NRIC numbers, bank login details or full financial documents in a first message &mdash; we'll tell you what's needed and how to send it securely.</p>
-      <div style="margin-top:1.4rem;border-top:1px solid var(--rule);padding-top:1.2rem">
-        <div class="detail-row"><span class="detail-k">Email</span><span class="detail-v"><a href="mailto:admin@liquidify.sg">admin@liquidify.sg</a></span></div>
-        <div class="detail-row"><span class="detail-k">WhatsApp</span><span class="detail-v"><a href="https://wa.me/6580614848">+65 8061 4848</a></span></div>
-        <div class="detail-row"><span class="detail-k">Hours</span><span class="detail-v">Mon&ndash;Fri, 9am&ndash;6pm (SGT)</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="sticky-cta">
-  <a class="btn btn-ghost" href="#calculators">Calculators</a>
-  <button class="btn btn-primary" data-enquiry type="button">Check your options</button>
-</div>
-
-<!-- STICKY HEADER -->
-<header style="position: sticky; top: 0; background: white; border-bottom: 1px solid #e0e0e0; padding: 15px 20px; z-index: 100; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <img src="logo.png" alt="Liquidify" style="height: 40px; width: auto;">
-    <span style="font-weight: 600; color: #017d76;">Liquidify</span>
-  </div>
-  <nav style="display: flex; gap: 20px; align-items: center; font-size: 14px;">
-    <a href="/upload.html" style="color: #017d76; text-decoration: none; font-weight: 500;">Upload Documents</a>
-    <a href="privacy.html" style="color: #017d76; text-decoration: none; font-weight: 500;">Privacy</a>
-  </nav>
-</header>
-
-<!-- FOOTER -->
-<footer style="margin-top:60px; padding:40px 20px; background:#f0f7f6; border-top:1px solid #d0e8e5; text-align:center;">
-  <div style="max-width:600px; margin:0 auto;">
-    <img src="logo.png" alt="Liquidify" style="height: 50px; width: auto; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
-    <h3 style="margin:0 0 10px 0; color:#017d76;">Liquidify Pte Ltd</h3>
-    <p style="margin:10px 0; font-size:14px; color:#666;">
-      <strong>WhatsApp:</strong> <a href="https://wa.me/6580614848" style="color:#017d76; text-decoration:none;">+65 8061 4848</a><br>
-      <strong>Email:</strong> <a href="mailto:admin@liquidify.sg" style="color:#017d76; text-decoration:none;">admin@liquidify.sg</a><br>
-      <strong>Website:</strong> <a href="https://liquidify.sg" style="color:#017d76; text-decoration:none;">liquidify.sg</a>
-    </p>
-    <p style="margin:20px 0 0 0; font-size:12px; color:#999;">
-      <a href="/privacy.html" style="color:#017d76; text-decoration:none;">Privacy Policy</a> | &copy; 2026 Liquidify Pte Ltd. All rights reserved.
-    </p>
-  </div>
-</footer>
+<div class="sticky" id="sticky"><a class="btn btn-primary" href="#check">Check if I'm eligible · free</a></div>
 
 <script>
-(function(){
-  "use strict";
+/* ===== CONFIG ===== */
+var SHEET_URL = "https://script.google.com/macros/s/AKfycbwBu2TzKKBLO6ZK0Bp-wdfX194OUqcsvC-SJHilPRXpKCWVeeK41UcW_UfB7YEHuKEh/exec"; //
+var WA_NUMBER = "6580614848";
+var PAGE = "SME";
+/* ================== */
 
-  var sgd = function(n){
-    return "S$" + Math.round(n).toLocaleString("en-SG");
-  };
+window.dataLayer = window.dataLayer || [];
+var answers = {owner:"", status:"", amount:""};
+var stack = [1];
 
-  // amortised monthly payment
-  function pmt(principal, annualRatePct, years){
-    var r = (annualRatePct/100)/12, n = years*12;
-    if(r === 0) return principal/n;
-    return principal * r / (1 - Math.pow(1+r, -n));
-  }
-  // principal supportable from a given monthly payment
-  function pv(payment, annualRatePct, years){
-    var r = (annualRatePct/100)/12, n = years*12;
-    if(r === 0) return payment*n;
-    return payment * (1 - Math.pow(1+r, -n)) / r;
-  }
+// capture ad params so the Sheet shows which ad a lead came from
+var qs = new URLSearchParams(location.search);
+var src = {utm_source:qs.get("utm_source")||"", utm_campaign:qs.get("utm_campaign")||"", utm_content:qs.get("utm_content")||"", fbclid:qs.get("fbclid")?"yes":""};
 
-  var $ = function(id){ return document.getElementById(id); };
+var steps = document.querySelectorAll(".step");
+var bars = document.querySelectorAll(".progress i");
+function show(id){
+  steps.forEach(function(s){ s.classList.toggle("active", s.dataset.step == id); });
+  var n = id === "no" ? 4 : +id;
+  bars.forEach(function(b,i){ b.classList.toggle("on", i < n); });
+}
+function go(id){ stack.push(id); show(id); }
 
-  /* ---------- tabs ---------- */
-  var tabs = Array.prototype.slice.call(document.querySelectorAll(".tab"));
-  tabs.forEach(function(tab, i){
-    tab.addEventListener("click", function(){
-      tabs.forEach(function(t, j){
-        var selected = i === j;
-        t.setAttribute("aria-selected", selected ? "true" : "false");
-        var panel = $("panel-" + (j+1));
-        if(panel) panel.hidden = !selected;
-      });
-    });
-    tab.addEventListener("keydown", function(e){
-      var dir = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-      if(!dir) return;
-      e.preventDefault();
-      var next = tabs[(i + dir + tabs.length) % tabs.length];
-      next.focus(); next.click();
-    });
+document.querySelectorAll(".opt").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var q = btn.dataset.q, v = btn.dataset.v;
+    answers[q] = v;
+    btn.parentNode.querySelectorAll(".opt").forEach(function(o){ o.classList.toggle("sel", o === btn); });
+    window.dataLayer.push({event:"lp_quiz_answer", lp_page:PAGE, question:q, answer:v});
+    setTimeout(function(){
+      if (q === "owner") { if (v === "No") { go("no"); log("Not business owner"); } else go(2); }
+      else if (q === "status") go(3);
+      else if (q === "amount") {
+        var foreign = /Employment|Work Permit/.test(answers.status);
+        document.getElementById("res-local").hidden = foreign;
+        document.getElementById("res-foreign").hidden = !foreign;
+        go(4);
+      }
+    }, 180);
   });
+});
+document.querySelectorAll("[data-back]").forEach(function(b){
+  b.addEventListener("click", function(){ if (stack.length > 1) { stack.pop(); show(stack[stack.length-1]); } });
+});
+document.querySelector("[data-restart]").addEventListener("click", function(){
+  stack = [1]; answers = {owner:"",status:"",amount:""};
+  document.querySelectorAll(".opt.sel").forEach(function(o){ o.classList.remove("sel"); });
+  show(1);
+});
 
-  /* ---------- calculator 1: repayment ---------- */
-  function calc1(){
-    var amt = +$("c1-amt").value, rate = +$("c1-rate").value, yrs = +$("c1-yrs").value;
-    $("c1-amt-o").textContent = sgd(amt);
-    $("c1-rate-o").textContent = rate.toFixed(1) + "%";
-    $("c1-yrs-o").textContent = yrs + (yrs === 1 ? " year" : " years");
-    var m = pmt(amt, rate, yrs), total = m*yrs*12, interest = total - amt;
-    $("c1-monthly").textContent = sgd(m);
-    $("c1-total").textContent = sgd(total);
-    $("c1-int").textContent = sgd(interest);
-    $("c1-pct").textContent = (interest/amt*100).toFixed(1) + "%";
+function cleanMobile(m){ return m.replace(/[^\d+]/g,""); }
+function validMobile(m){ var d = m.replace(/\D/g,""); return d.length >= 8 && d.length <= 15; }
+
+function log(outcome, extra){
+  if (!SHEET_URL) return;
+  var data = Object.assign({page:PAGE, outcome:outcome, owner:answers.owner, status:answers.status, amount:answers.amount, url:location.pathname}, src, extra||{});
+  try {
+    fetch(SHEET_URL, {method:"POST", mode:"no-cors", keepalive:true, headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify(data)});
+  } catch(e){}
+}
+
+document.getElementById("lead").addEventListener("submit", function(e){
+  e.preventDefault();
+  var name = document.getElementById("name").value.trim();
+  var mobile = cleanMobile(document.getElementById("mobile").value.trim());
+  var ok = true;
+  document.getElementById("err-name").style.display = name ? "none" : (ok=false, "block");
+  document.getElementById("err-mobile").style.display = validMobile(mobile) ? "none" : (ok=false, "block");
+  if (!ok) return;
+
+  log("Sent to WhatsApp", {name:name, mobile:mobile});
+  window.dataLayer.push({event:"whatsapp_click", lp_page:PAGE, residency:answers.status, amount:answers.amount});
+
+  var msg = "Hi Liquidify, I'd like a free assessment for a business loan.\n\n" +
+    "Name: " + name + "\n" +
+    "Business owner: " + answers.owner + "\n" +
+    "Residency: " + answers.status + "\n" +
+    "Amount needed: " + answers.amount + "\n\n" +
+    "Business name:\nWhat the funds are for:";
+  var url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+  setTimeout(function(){ window.location.href = url; }, 150);
+});
+
+// plain WhatsApp link in footer also counts as a click
+document.querySelectorAll("[data-wa-plain]").forEach(function(a){
+  a.addEventListener("click", function(){ window.dataLayer.push({event:"whatsapp_click", lp_page:PAGE, residency:"unknown"}); });
+});
+
+
+// ---- repayment calculator (promo) ----
+(function(){
+  var RATE = 0.033, a = document.getElementById("cAmt"), t = document.getElementById("cTen");
+  if (!a) return;
+  var f = function(n){ return "S$" + Math.round(n).toLocaleString("en-SG"); };
+  var used = false;
+  function upd(){
+    var P = +a.value, n = +t.value * 12, r = RATE/12;
+    var m = P * r / (1 - Math.pow(1 + r, -n));
+    document.getElementById("cAmtL").textContent = f(P);
+    document.getElementById("cTenL").textContent = t.value + (t.value == 1 ? " year" : " years");
+    document.getElementById("cOut").textContent = f(m);
+    document.getElementById("cInt").textContent = f(m * n - P);
   }
-  ["c1-amt","c1-rate","c1-yrs"].forEach(function(id){ $(id).addEventListener("input", calc1); });
-  calc1();
-
-  /* ---------- calculator 2: borrowing capacity ---------- */
-  function calc2(){
-    var inc = +$("c2-inc").value, com = +$("c2-com").value,
-        rate = +$("c2-rate").value, yrs = +$("c2-yrs").value;
-    $("c2-inc-o").textContent = sgd(inc);
-    $("c2-com-o").textContent = sgd(com);
-    $("c2-rate-o").textContent = rate.toFixed(1) + "%";
-    $("c2-yrs-o").textContent = yrs + (yrs === 1 ? " year" : " years");
-    var avail = Math.max(0, inc*0.55 - com);
-    var cap = pv(avail, rate, yrs);
-    $("c2-avail").textContent = sgd(avail);
-    $("c2-cap").textContent = sgd(cap);
-    $("c2-mrate").textContent = (rate/12).toFixed(3) + "%";
-  }
-  ["c2-inc","c2-com","c2-rate","c2-yrs"].forEach(function(id){ $(id).addEventListener("input", calc2); });
-  calc2();
-
-  /* ---------- calculator 3: refinancing ---------- */
-  function calc3(){
-    var bal = +$("c3-bal").value, cur = +$("c3-cur").value,
-        nw = +$("c3-new").value, yrs = +$("c3-yrs").value;
-    $("c3-bal-o").textContent = sgd(bal);
-    $("c3-cur-o").textContent = cur.toFixed(1) + "%";
-    $("c3-new-o").textContent = nw.toFixed(1) + "%";
-    $("c3-yrs-o").textContent = yrs + (yrs === 1 ? " year" : " years");
-    var cm = pmt(bal, cur, yrs), nm = pmt(bal, nw, yrs);
-    var ms = cm - nm, life = ms * yrs * 12;
-    $("c3-cm").textContent = sgd(cm);
-    $("c3-nm").textContent = sgd(nm);
-    $("c3-ms").textContent = sgd(ms);
-    $("c3-life").textContent = sgd(life);
-  }
-  ["c3-bal","c3-cur","c3-new","c3-yrs"].forEach(function(id){ $(id).addEventListener("input", calc3); });
-  calc3();
-
-  /* ---------- scroll reveal ---------- */
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var items = document.querySelectorAll(".reveal");
-  if(reduce || !("IntersectionObserver" in window)){
-    items.forEach(function(el){ el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    items.forEach(function(el){ io.observe(el); });
-  }
-
-  /* ---------- year ---------- */
-  $("yr").textContent = new Date().getFullYear();
+  [a,t].forEach(function(el){ el.addEventListener("input", function(){ upd(); if(!used){ used = true; window.dataLayer.push({event:"lp_calc_used", lp_page:PAGE}); } }); });
+  upd();
 })();
-</script>
 
-<script>
+// ---- ad video: play only when on screen, sound toggle ----
 (function(){
-  "use strict";
-  var body=document.body;
-  function lock(on){ body.classList[on?"add":"remove"]("locked"); }
-
-  /* ---------- drawer ---------- */
-  var drawer=document.getElementById("drawer"), menuBtn=document.getElementById("menuBtn");
-  function openDrawer(){
-    drawer.hidden=false; requestAnimationFrame(function(){ drawer.classList.add("open"); });
-    menuBtn.setAttribute("aria-expanded","true"); lock(true);
-  }
-  function closeDrawer(){
-    drawer.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false");
-    setTimeout(function(){ drawer.hidden=true; }, 280);
-    if(!sheet.classList.contains("open")) lock(false);
-    menuBtn.focus();
-  }
-  menuBtn.addEventListener("click", function(){
-    drawer.classList.contains("open") ? closeDrawer() : openDrawer();
-  });
-  drawer.querySelectorAll("[data-close-drawer]").forEach(function(el){
-    el.addEventListener("click", closeDrawer);
-  });
-  drawer.querySelectorAll("[data-nav]").forEach(function(a){
-    a.addEventListener("click", function(){ closeDrawer(); });
-  });
-
-  /* ---------- enquiry sheet ---------- */
-  var sheet=document.getElementById("enquiry"), lastFocus=null;
-  function openSheet(){
-    lastFocus=document.activeElement;
-    if(drawer.classList.contains("open")) closeDrawer();
-    sheet.hidden=false; requestAnimationFrame(function(){ sheet.classList.add("open"); });
-    lock(true);
-    var f=sheet.querySelector(".icon-btn"); if(f) f.focus();
-  }
-  function closeSheet(){
-    sheet.classList.remove("open");
-    setTimeout(function(){ sheet.hidden=true; }, 260);
-    lock(false);
-    if(lastFocus && lastFocus.focus) lastFocus.focus();
-  }
-  document.querySelectorAll("[data-enquiry]").forEach(function(b){
-    b.addEventListener("click", openSheet);
-  });
-  sheet.querySelectorAll("[data-close-enquiry]").forEach(function(el){
-    el.addEventListener("click", closeSheet);
-  });
-  sheet.querySelector("a[href^='https://wa.me']").addEventListener("click", function(){
-    setTimeout(closeSheet, 400);
-  });
-
-  document.addEventListener("keydown", function(e){
-    if(e.key!=="Escape") return;
-    if(sheet.classList.contains("open")) closeSheet();
-    else if(drawer.classList.contains("open")) closeDrawer();
-  });
-
-  /* ---------- FAQ feedback ---------- */
-  document.querySelectorAll(".faq-fb").forEach(function(box){
-    box.querySelectorAll(".fb-btn").forEach(function(btn){
-      btn.addEventListener("click", function(){
-        btn.classList.add("picked");
-        setTimeout(function(){
-          box.classList.add("done");
-          var t=document.createElement("p");
-          t.className="thanks";
-          t.textContent = btn.dataset.fb==="yes" ? "Thanks \u2014 glad that helped." : "Thanks \u2014 message us and we'll explain it properly.";
-          box.appendChild(t);
-        }, 160);
+  var v = document.getElementById("adv"), b = document.getElementById("snd");
+  if (!v) return;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting && !reduce) { v.preload = "auto"; var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+        else v.pause();
       });
-    });
+    }, {threshold:.4}).observe(v);
+  }
+  b.addEventListener("click", function(){
+    v.muted = !v.muted;
+    if (!v.muted) { v.currentTime = 0; v.play(); window.dataLayer.push({event:"lp_video_sound", lp_page:PAGE}); }
+    b.setAttribute("aria-pressed", String(!v.muted));
+    b.querySelector("span").textContent = v.muted ? "Tap for sound" : "Mute";
+    document.getElementById("sndx").style.display = v.muted ? "" : "none";
   });
 })();
+
+// sticky CTA: show after hero, hide while checker is on screen
+var sticky = document.getElementById("sticky");
+var checkerEl = document.getElementById("check");
+function onScroll(){
+  var r = checkerEl.getBoundingClientRect();
+  var inView = r.top < innerHeight && r.bottom > 0;
+  sticky.classList.toggle("show", scrollY > 420 && !inView);
+}
+addEventListener("scroll", onScroll, {passive:true});
 </script>
 </body>
 </html>
