@@ -21,7 +21,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@600&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -31,14 +31,14 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:"DM Sans",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;font-size:16px;padding-bottom:84px}
+body{font-family:"Inter",system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;font-size:16px;padding-bottom:84px}
 img{max-width:100%;display:block}
 a{color:var(--green-d)}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+h1,h2,h3{font-family:"Inter",sans-serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
 h1 em,h2 em{font-style:italic;color:var(--green)}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green-d)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:16px 26px;font:600 16px/1 "DM Sans",sans-serif;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:16px 26px;font:600 16px/1 "Inter",sans-serif;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
 .btn:active{transform:scale(.98)}
 .btn-primary{background:var(--green);color:#fff}
 .btn-primary:hover{background:var(--green-d)}
@@ -72,7 +72,7 @@ header .btn{padding:11px 18px;font-size:14px}
 .promo h2 em{color:var(--gold)}
 .promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 22px;position:relative;z-index:1}
 .stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px}
-.stat b{display:block;font-family:"Fraunces",serif;font-size:28px;font-weight:600;color:#fff}
+.stat b{display:block;font-family:"Inter",sans-serif;font-size:28px;font-weight:600;color:#fff}
 .stat span{font-size:13px;color:#BFD7CF;line-height:1.35;display:block}
 .promo .twist{position:relative;z-index:1;background:#fff;color:var(--ink);border-radius:14px;padding:18px 18px 18px 20px;border-left:5px solid var(--gold)}
 .promo .twist strong{display:block;font-size:17px;margin-bottom:4px}
@@ -95,14 +95,14 @@ section{padding:56px 0}
 .step .hint{color:var(--muted);font-size:15px;margin-bottom:18px}
 .opts{display:grid;gap:10px}
 .opts.two{grid-template-columns:1fr 1fr}
-.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px;font:500 16px "DM Sans",sans-serif;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px;font:500 16px "Inter",sans-serif;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
 .opt:hover{border-color:var(--green)}
 .opt.sel{border-color:var(--green);background:var(--mint)}
 .opt small{display:block;color:var(--muted);font-size:13px;font-weight:400}
-.back{background:none;border:0;color:var(--muted);font:500 14px "DM Sans",sans-serif;margin-top:16px;cursor:pointer;padding:6px 0}
+.back{background:none;border:0;color:var(--muted);font:500 14px "Inter",sans-serif;margin-top:16px;cursor:pointer;padding:6px 0}
 .field{margin-bottom:14px}
 .field label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
-.field input{width:100%;padding:15px 14px;border:1.5px solid var(--line);border-radius:12px;font:16px "DM Sans",sans-serif;background:var(--paper);color:var(--ink)}
+.field input{width:100%;padding:15px 14px;border:1.5px solid var(--line);border-radius:12px;font:16px "Inter",sans-serif;background:var(--paper);color:var(--ink)}
 .field input:focus{outline:none;border-color:var(--green);background:#fff}
 .err{color:#B3261E;font-size:13px;margin-top:6px;display:none}
 .result-badge{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--green-d);font-weight:700;font-size:13px;padding:7px 12px;border-radius:999px;margin-bottom:12px}
@@ -113,15 +113,15 @@ section{padding:56px 0}
 /* process */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
 .pstep{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px}
-.pstep .n{font-family:"Fraunces",serif;font-size:15px;color:var(--green);font-weight:600}
-.pstep h3{font-family:"DM Sans",sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin:8px 0 8px}
+.pstep .n{font-family:"Inter",sans-serif;font-size:15px;color:var(--green);font-weight:600}
+.pstep h3{font-family:"Inter",sans-serif;font-weight:700;font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin:8px 0 8px}
 .pstep p{font-size:15px;color:var(--muted)}
 .pstep.fee{background:var(--mint);border-color:#BFE6D8}
 
 /* proof */
 .proof{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .bigstat{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 22px;margin-bottom:30px}
-.bigstat b{font-family:"Fraunces",serif;font-size:clamp(52px,11vw,88px);line-height:.9;color:var(--deep);font-weight:600}
+.bigstat b{font-family:"Inter",sans-serif;font-size:clamp(52px,11vw,88px);line-height:.9;color:var(--deep);font-weight:600}
 .bigstat b small{font-size:.45em;color:var(--green)}
 .bigstat p{max-width:32ch;color:var(--muted);padding-bottom:8px}
 .cases{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -197,7 +197,7 @@ footer a{color:#fff}
 .calc input[type=range]{width:100%;accent-color:var(--gold);height:28px;cursor:pointer}
 .calc-out{background:#fff;color:var(--ink);border-radius:14px;padding:16px 16px;text-align:center}
 .calc-out span{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.calc-out b{display:block;font-family:"Fraunces",serif;font-size:clamp(32px,6vw,40px);font-weight:600;color:var(--deep);line-height:1.1;margin:6px 0 4px}
+.calc-out b{display:block;font-family:"Inter",sans-serif;font-size:clamp(32px,6vw,40px);font-weight:600;color:var(--deep);line-height:1.1;margin:6px 0 4px}
 .calc-out small{display:block;font-size:12.5px;color:var(--muted)}
 .calc-out small span{display:inline;font-size:inherit;font-weight:600;letter-spacing:0;text-transform:none;color:var(--ink)}
 
@@ -233,7 +233,7 @@ footer a{color:#fff}
 .how .steps{grid-template-columns:1fr 1fr}
 .vid{position:relative;border-radius:22px;overflow:hidden;background:#0B3B30;aspect-ratio:9/16;box-shadow:var(--shadow)}
 .vid video{width:100%;height:100%;object-fit:cover;display:block}
-.vid .snd{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(11,59,48,.82);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:9px 13px;font:600 13px "DM Sans",sans-serif;cursor:pointer;backdrop-filter:blur(6px)}
+.vid .snd{position:absolute;right:12px;bottom:12px;display:inline-flex;align-items:center;gap:6px;background:rgba(11,59,48,.82);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:9px 13px;font:600 13px "Inter",sans-serif;cursor:pointer;backdrop-filter:blur(6px)}
 .vid .snd svg{width:16px;height:16px}
 @media (max-width:900px){
   .check-grid{grid-template-columns:1fr}
@@ -251,6 +251,17 @@ footer .social{display:flex;gap:10px;margin:4px 0 16px}
 footer .social a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;transition:background .15s}
 footer .social a:hover{background:var(--green)}
 footer .social svg{width:19px;height:19px}
+
+/* ===== typography: Inter everywhere, Quicksand for the logo wordmark only ===== */
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Inter",system-ui,sans-serif;font-weight:700;letter-spacing:-.025em}
+h1{font-weight:800;letter-spacing:-.03em}
+h1 em,h2 em{font-style:normal}
+b,strong{font-weight:600}
+.logo{font-family:"Quicksand","Inter",sans-serif!important;font-weight:600!important;font-size:23px!important;letter-spacing:-.01em;color:var(--green-d)}
+.logo img{width:28px;height:28px;border-radius:7px}
+.stat b,.bigstat b,.calc-out b,.hstats b,.proofrow b.n,.pstep .n,.s3 .n,.pcard .time b,.estcard .big,.est-out .big{font-family:"Inter",sans-serif!important;font-weight:800!important;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.eyebrow{letter-spacing:.06em}
 </style>
 </head>
 <body>
@@ -258,7 +269,7 @@ footer .social svg{width:19px;height:19px}
 
 <header>
   <div class="wrap">
-    <a class="logo" href="/" aria-label="Liquidify home"><img src="/logo.png" alt="" onerror="this.remove()">liquidify</a>
+    <a class="logo" href="/" aria-label="Liquidify home"><img src="/logo.png" alt="" width="28" height="28">liquidify</a>
     <a class="btn btn-primary" href="#check">Check eligibility</a>
   </div>
 </header>
@@ -269,7 +280,7 @@ footer .social svg{width:19px;height:19px}
     <div class="wrap">
       <div class="eyebrow">Business loans · Singapore SMEs</div>
       <h1><span>Which bank?</span><span>Am I eligible?</span><span><em>Which one fits me?</em></span></h1>
-      <p class="lead">We answer all three before you apply anywhere. Startup or established, we assess your business for free, work out which banks are lending right now, and plan the submission with you in person.</p>
+      <p class="lead">We answer all three before you apply. Free assessment, planned with you in person. Startups welcome.</p>
       <div class="ctas">
         <a class="btn btn-primary" href="#check">Check if I'm eligible · 30 sec</a>
         <span class="live"><i></i>Replies anytime, incl. weekends</span>
@@ -303,8 +314,8 @@ footer .social svg{width:19px;height:19px}
         <div class="calc-out" aria-live="polite"><span>Est. monthly repayment</span><b id="cOut">S$5,431</b><small>at 3.3% p.a. flat (EIR ~<span id="cEir">6.5</span>% p.a.)<br>total interest <span id="cInt">S$49,500</span></small></div>
       </div>
       <div class="twist">
-        <strong>The rate isn't the only thing that changed.</strong>
-        With the government carrying more of the risk, some banks are lending far more aggressively than others. Knowing which ones are saying yes right now, and to which kind of business, is the difference between an approval and a decline.
+        <strong>The rate isn't the only change.</strong>
+        Some banks are now lending far more aggressively than others. We know which ones are saying yes, and to whom.
       </div>
       <p class="fine">*Indicative of rates recently seen under government-supported working capital financing. Repayment estimate assumes a flat rate of 3.3% p.a.; the effective interest rate (EIR) shown is calculated from it and is higher. For illustration only. Actual rate, quantum and eligibility depend on the lender's assessment of your documents. Government risk share of up to 70% applies to eligible enterprises. Scheme terms are set by the government and participating lenders and may change.</p>
     </div>
@@ -317,7 +328,6 @@ footer .social svg{width:19px;height:19px}
         <div class="eyebrow">Free eligibility check</div>
         <h2>Three taps. Then we take it from there on WhatsApp.</h2>
       </div>
-
       <div class="check-grid">
       <div class="checker" id="checker">
         <div class="progress" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
@@ -418,8 +428,8 @@ footer .social svg{width:19px;height:19px}
       <div>
         <div class="eyebrow">Before you apply anywhere</div>
         <h2>Applying bank by bank can <em>hurt</em> your chances.</h2>
-        <p>Every loan application leaves an enquiry on your credit report, and the next bank can see it. Several in a short time can look like you've been turned down elsewhere, which makes the next yes harder to get.</p>
-        <p>We work out which banks are likely to approve <b>before</b> anything is submitted, so you're not collecting enquiries for nothing.</p>
+        <p>Every application leaves an enquiry on your credit report. Several in a short time can make the next bank say no.</p>
+        <p>We work out which banks are likely to approve <b>before</b> anything is submitted.</p>
       </div>
       <div class="report" aria-label="Illustration of a credit report with multiple enquiries">
         <div class="rh">Credit report · enquiries <em>4 in 30 days</em></div>
@@ -440,7 +450,7 @@ footer .social svg{width:19px;height:19px}
       <div class="sec-head">
         <div class="eyebrow">How we work</div>
         <h2>We do the thinking <em>before</em> the bank does.</h2>
-        <p>Most declines come from applying to the wrong bank, or presenting the right business badly. Our process is built to avoid both.</p>
+        <p>Most declines come from applying to the wrong bank. Our process avoids that.</p>
       </div>
       <div class="how">
       <div class="vid">
@@ -487,12 +497,10 @@ footer .social svg{width:19px;height:19px}
   <section>
     <div class="wrap" style="max-width:760px">
       <div class="sec-head"><div class="eyebrow">Common questions</div><h2>Before you message us</h2></div>
-      <details><summary>My business is new. Can I still qualify?</summary><p>Yes, we work with businesses from startup stage to established companies. Newer businesses are assessed differently, and some lenders are far more open to them than others. That's exactly what the free assessment is for.</p></details>
-      <details><summary>What does it cost?</summary><p>The assessment and in-person planning are free. Our service fee is agreed with you upfront and is only payable on success, when your financing is approved and disbursed.</p></details>
-      <details><summary>How fast can I get funded?</summary><p>It depends on the lender and how complete your documents are. Our job is to tell you quickly whether your case is realistic and which lenders will move fastest, so you're not waiting weeks to hear a no.</p></details>
-      <details><summary>I'm a foreigner who owns a business here. Can you help?</summary><p>Often, yes. Employment Pass and Work Permit holders who own a Singapore business can be funded through private funders, mainly on the strength of the business's bank statements.</p></details>
-      <details><summary>Are you a bank or lender?</summary><p>No. We're a financing broker. We assess your position, plan the strategy, prepare and submit your application, and follow it through. The lending decision, rate and terms are always the lender's.</p></details>
-      <details><summary>Does talking to you affect my credit?</summary><p>No. Having a conversation and an assessment with us doesn't touch your credit file. Lenders only run checks once you agree to submit an application.</p></details>
+      <details><summary>My business is new. Can I still qualify?</summary><p>Yes. We work with startups through to established companies. Some lenders are far more open to newer businesses than others, and we know which.</p></details>
+      <details><summary>What does it cost?</summary><p>The assessment and planning are free. Our fee is agreed upfront and only payable once your financing is disbursed.</p></details>
+      <details><summary>How fast can I get funded?</summary><p>It depends on the lender and your documents. We tell you quickly whether your case is realistic, so you're not waiting weeks to hear a no.</p></details>
+      <details><summary>I'm a foreigner who owns a business here. Can you help?</summary><p>Often, yes. EP and Work Permit holders who own a Singapore business can be funded through private funders, mainly on the strength of the bank statements.</p></details>
     </div>
   </section>
 
